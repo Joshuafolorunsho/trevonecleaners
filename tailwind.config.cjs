@@ -4,8 +4,12 @@ const config = {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#4EABC2',
+				primary: {
+					100: '#4EABC2',
+					200: '#D9EDF2'
+				},
 				gray: {
+					50: '#F7FBFC',
 					850: '#485356',
 					950: '#1E2324'
 				}
