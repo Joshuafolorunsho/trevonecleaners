@@ -5,7 +5,7 @@
 </script>
 
 <div class={clsx("text-gray-950 text-center max-w-3xl mx-auto", classes)}>
-	<h3 class="font-medium text-4xl font-lato">
+	<h3 class="font-semibold text-4xl font-lato">
 		<slot />
 	</h3>
 	{#if subTitle}

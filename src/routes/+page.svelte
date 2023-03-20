@@ -3,6 +3,8 @@
 	import heroBg from '$lib/assets/home-hero.png';
 	import Button from '$lib/button.svelte';
 	import Title from '$lib/title.svelte';
+	import Services from '$lib/services.svelte';
+	import Testimonials from '$lib/testimonials.svelte';
 </script>
 
 <section
@@ -27,9 +29,19 @@
 </section>
 
 <section class="py-10 sm:py-16 bg-gray-50">
-    <div class="container mx-auto">
-        <Title subTitle="Benefit from our top-notch cleaning services that leave you satisfied.">
-            Experience complete satisfaction with our exceptional cleaning services.
-        </Title>
-    </div>
+	<div class="container mx-auto">
+		<Title subTitle="Benefit from our top-notch cleaning services that leave you satisfied.">
+			Experience complete satisfaction with our exceptional cleaning services.
+		</Title>
+		<Services />
+	</div>
+</section>
+
+<section class="py-10 sm:py-16 bg-primary-200">
+	<div class="container mx-auto">
+		<Title subTitle="Testimonials">
+			Endorsed by <span class="text-primary-300">clients</span> who are proud of the <span class="text-primary-300">quality</span> of Trevone services.
+		</Title>
+		<Testimonials />
+	</div>
 </section>
