@@ -1,6 +1,6 @@
+/** @type {import('tailwindcss').Config} */
 const config = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
-
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
 			colors: {
@@ -22,8 +22,7 @@ const config = {
 			}
 		}
 	},
-
-	plugins: []
+  plugins: [],
 };
 
 module.exports = config;
