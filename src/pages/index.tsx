@@ -1,8 +1,8 @@
-import { type NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
+import { type NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
 
-import { Button, LinkButton, Services, Testimonials, Title } from "~/components";
+import { Button, LinkButton, Services, Testimonials, Title } from '~/components';
 
 const Home: NextPage = () => {
   return (
@@ -19,13 +19,12 @@ const Home: NextPage = () => {
         >
           <div className="mx-auto flex h-full max-w-3xl flex-col items-center justify-center p-16 px-5 text-center sm:px-10 md:px-0">
             <h1 className="font-lato text-5xl font-black">
-              Making Your <span className="text-primary-100">Space</span>{" "}
-              Spotless with Expert Cleaning Solutions.
+              Making Your <span className="text-primary-100">Space</span> Spotless with Expert
+              Cleaning Solutions.
             </h1>
             <p className="my-6 text-2xl font-medium">
-              At Trevone, we believe that a clean space is a happy space. That's
-              why we offer a wide range of cleaning services to help keep your
-              home or office looking its best.d
+              At Trevone, we believe that a clean space is a happy space. That's why we offer a wide
+              range of cleaning services to help keep your home or office looking its best.d
             </p>
             <div className="flex items-center space-x-5">
               <Button>Book us online now</Button>
@@ -39,8 +38,7 @@ const Home: NextPage = () => {
         <section className="bg-gray-50 py-10 sm:py-16">
           <div className="container mx-auto">
             <Title subTitle="Benefit from our top-notch cleaning services that leave you satisfied.">
-              Experience complete satisfaction with our exceptional cleaning
-              services.
+              Experience complete satisfaction with our exceptional cleaning services.
             </Title>
             <Services />
           </div>
@@ -49,11 +47,19 @@ const Home: NextPage = () => {
         <section className="bg-primary-200 py-10 sm:py-16">
           <div className="container mx-auto">
             <Title subTitle="Testimonials">
-              Endorsed by <span className="text-primary-300">clients</span> who
-              are proud of the <span className="text-primary-300">quality</span>{" "}
-              of Trevone services.
+              Endorsed by <span className="text-primary-300">clients</span> who are proud of the{' '}
+              <span className="text-primary-300">quality</span> of Trevone services.
             </Title>
             <Testimonials />
+          </div>
+        </section>
+
+        <section>
+          <div className="container mx-auto">
+            <Title subTitle="we believe in providing top-quality cleaning services that meet the needs of our clients.">
+              Our goal is to assist you in finding a trustworthy cleaner. Check out these frequently
+              asked questions.
+            </Title>
           </div>
         </section>
       </>
