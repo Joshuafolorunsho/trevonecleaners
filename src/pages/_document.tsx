@@ -9,7 +9,7 @@ function MyDocument() {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className='font-open-sans'>
         <Main />
         <NextScript />
       </body>
