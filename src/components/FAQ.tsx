@@ -71,7 +71,7 @@ export const FAQ = () => {
                             rx="23"
                             transform="rotate(-90 1 47)"
                             stroke="#21535F"
-                            stroke-width="2"
+                            strokeWidth="2"
                           />
                         </svg>
                       ) : (
@@ -94,7 +94,7 @@ export const FAQ = () => {
                             rx="23"
                             transform="rotate(-90 1 47)"
                             stroke="#21535F"
-                            stroke-width="2"
+                            strokeWidth="2"
                           />
                         </svg>
                       )}
