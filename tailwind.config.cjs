@@ -3,6 +3,10 @@ const config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero-about': "url('/assets/about/building.png')",
+        'hero-services': "url('/assets/services/equipment.png')",
+      },
       colors: {
         primary: {
           100: '#4EABC2',

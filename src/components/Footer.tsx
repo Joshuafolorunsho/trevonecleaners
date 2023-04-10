@@ -67,7 +67,7 @@ export const Footer = () => {
     }
   ];
   return (
-    <footer className="pt-12 pb-6">
+    <footer className="pt-12 border-t-2 border-t-gray-750 pb-6">
       <div className="container mx-auto">
         <div className="grid grid-cols-5">
           <div>
