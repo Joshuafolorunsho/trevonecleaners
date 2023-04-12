@@ -33,9 +33,13 @@ const faqs = [
   }
 ];
 
-export const FAQ = () => {
+interface FAQProps {
+  bgColor?: string;
+}
+
+export const FAQ: React.FC<FAQProps> = ({ bgColor = '' }) => {
   return (
-    <section className="bg-gray-50 py-16">
+    <section style={{ backgroundColor: bgColor }} className="bg-gray-50 py-16">
       <div className="container mx-auto">
         <Title subTitle="we believe in providing top-quality cleaning services that meet the needs of our clients.">
           Our goal is to assist you in finding a trustworthy cleaner. Check out these frequently
@@ -109,7 +113,7 @@ export const FAQ = () => {
           ))}
         </div>
       </div>
-      <div className="flex mt-8 items-center space-x-3 justify-center text-xl">
+      <div className="mt-8 flex items-center justify-center space-x-3 text-xl">
         <span>Have a question?</span>
         <Link className="text-blue-400" href="/">
           Reach out to us

@@ -18,7 +18,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
   return (
     <Link
       className={clsx(
-        "border-primary-100 font-open-sans rounded-full border px-5 py-3 font-semibold",
+        "border-primary-100 font-open-sans rounded-full border inline-block px-5 py-3 font-semibold",
         variant === "primary" && "bg-primary-100 text-white",
         variant === "outline" && "text-gray-950",
         className

@@ -112,10 +112,12 @@ export const Footer = () => {
               </li>
             </ul>
             <ul className="mt-3 flex items-center space-x-3">
-              {socialLinks.map(({ href, title, icon }) => (
+              {socialLinks.map(({ href, title, icon }, index) => (
+                <li key={index}>
                 <Link href={href} title={title}>
                   <Image src={icon} width={28} height={28} alt={title} />
                 </Link>
+                </li>
               ))}
             </ul>
           </div>

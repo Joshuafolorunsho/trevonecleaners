@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Button, CheckMark, FAQ, Team, Testimonials, Title } from '~/components';
+import { Button, CheckMark, FAQ, Service, Team, Testimonials, Title } from '~/components';
 
 const Index = () => {
   const coreValues = [
@@ -26,8 +26,11 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <Service />
 
-      <FAQ />
+      <FAQ bgColor="#E4F2F6" />
+
     </>
   );
 };
