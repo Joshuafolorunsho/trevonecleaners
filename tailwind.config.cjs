@@ -6,6 +6,8 @@ const config = {
       backgroundImage: {
         'hero-about': "url('/assets/about/building.png')",
         'hero-services': "url('/assets/services/equipment.png')",
+        'hero-contact': "url('/assets/contact/office-phone.png')",
+        'hero-book': "url('/assets/book/laptop.png')",
       },
       colors: {
         primary: {

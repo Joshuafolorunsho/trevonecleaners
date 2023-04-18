@@ -10,3 +10,8 @@
     -webkit-text-stroke: 4px #99CEDC;
   }
 }
+
+
+.container {
+  @apply px-6;
+}

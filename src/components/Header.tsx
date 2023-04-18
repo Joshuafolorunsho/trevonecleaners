@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import clsx from 'clsx';
 
-import { Button } from '.';
+import { Button, LinkButton } from '.';
 
 export const Header = () => {
   const router = useRouter();
@@ -27,7 +27,7 @@ export const Header = () => {
             <Link className={clsx('', isActive && 'text-primary-100')} href={item.href}>{item.name}</Link>
           </li>
         )})}
-        <Button>Book Now</Button>
+        <LinkButton href='/book'>Book Now</LinkButton>
         <Button variant="outline">
           <div className='flex items-center space-x-2'>
             <svg
