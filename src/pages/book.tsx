@@ -17,7 +17,7 @@ const Index = () => {
         </div>
       </section>
       <section className=" bg-primary-300/90 text-center">
-        <p className="container mx-auto flex flex-col  items-center justify-center gap-3 py-5 md:py-8  text-white sm:flex-row">
+        <p className="container mx-auto flex flex-col  items-center justify-center gap-3 py-5 text-white  sm:flex-row md:py-8">
           <svg
             width="34"
             height="32"
@@ -37,41 +37,43 @@ const Index = () => {
         </p>
       </section>
       <section className="container mx-auto my-16">
-        <div className="flex items-center justify-center space-x-3">
-          <svg
-            className="h-6 w-6 sm:h-10 sm:w-10"
-            viewBox="0 0 35 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.5 33H25.5"
-              stroke="#4EABC2"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M1.5 25V4.2C1.5 3.35131 1.83714 2.53737 2.43726 1.93726C3.03737 1.33714 3.85131 1 4.7 1H30.3C31.1487 1 31.9626 1.33714 32.5627 1.93726C33.1629 2.53737 33.5 3.35131 33.5 4.2V25C33.5 25.8487 33.1629 26.6626 32.5627 27.2627C31.9626 27.8629 31.1487 28.2 30.3 28.2H4.7C3.85131 28.2 3.03737 27.8629 2.43726 27.2627C1.83714 26.6626 1.5 25.8487 1.5 25Z"
-              fill="#4EABC2"
-              stroke="#4EABC2"
-              strokeWidth="1.5"
-            />
-            <path
-              d="M12.6992 14.6L15.8992 17.8L22.2992 11.4"
-              stroke="white"
-              strokeWidth="3.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span className="text-xl font-semibold sm:text-2xl">Ready to book our services?</span>
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-center space-x-3">
+            <svg
+              className="h-6 w-6 sm:h-10 sm:w-10"
+              viewBox="0 0 35 34"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.5 33H25.5"
+                stroke="#4EABC2"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M1.5 25V4.2C1.5 3.35131 1.83714 2.53737 2.43726 1.93726C3.03737 1.33714 3.85131 1 4.7 1H30.3C31.1487 1 31.9626 1.33714 32.5627 1.93726C33.1629 2.53737 33.5 3.35131 33.5 4.2V25C33.5 25.8487 33.1629 26.6626 32.5627 27.2627C31.9626 27.8629 31.1487 28.2 30.3 28.2H4.7C3.85131 28.2 3.03737 27.8629 2.43726 27.2627C1.83714 26.6626 1.5 25.8487 1.5 25Z"
+                fill="#4EABC2"
+                stroke="#4EABC2"
+                strokeWidth="1.5"
+              />
+              <path
+                d="M12.6992 14.6L15.8992 17.8L22.2992 11.4"
+                stroke="white"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="text-xl font-semibold sm:text-2xl">Ready to book our services?</span>
+          </div>
+          <p className="mt-2 text-center sm:text-lg">
+            It's easy! Simply fill out the form below with your contact information and the details
+            of the services you need. Our team will be in touch with you promptly to confirm your
+            booking and answer any questions you may have.
+          </p>
         </div>
-        <p className="mt-2 sm:text-lg text-center">
-          It's easy! Simply fill out the form below with your contact information and the details of
-          the services you need. Our team will be in touch with you promptly to confirm your booking
-          and answer any questions you may have.
-        </p>
       </section>
     </>
   );
