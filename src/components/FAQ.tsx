@@ -46,7 +46,7 @@ export const FAQ: React.FC<FAQProps> = ({ bgColor = '' }) => {
           asked questions.
         </Title>
       </div>
-      <div className="my-6 container">
+      <div className="container mx-auto my-6">
         <div className="mx-auto w-full max-w-4xl space-y-4 rounded-2xl">
           {faqs.map((faq) => (
             <Disclosure key={faq.title}>

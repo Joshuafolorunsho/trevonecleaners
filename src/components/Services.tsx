@@ -1,27 +1,27 @@
-import React from "react";
+import React from 'react';
 
 const services = [
   {
-    imgUrl: "/assets/home/man-cleaning-wall.png",
-    title: "Janitorial/General Cleaning service",
+    imgUrl: '/assets/home/man-cleaning-wall.png',
+    title: 'Janitorial/General Cleaning service'
   },
   {
-    imgUrl: "/assets/home/lady-cleaning-mat.png",
-    title: "Carpet & Upholstery Cleaning",
+    imgUrl: '/assets/home/lady-cleaning-mat.png',
+    title: 'Carpet & Upholstery Cleaning'
   },
   {
-    imgUrl: "/assets/home/lady-cleaning-floor.png",
-    title: "Industrial Cleaning",
+    imgUrl: '/assets/home/lady-cleaning-floor.png',
+    title: 'Industrial Cleaning'
   },
   {
-    imgUrl: "/assets/home/lady-cleaning-floor-2.png",
-    title: "Floor restoration & Cleaning",
-  },
+    imgUrl: '/assets/home/lady-cleaning-floor-2.png',
+    title: 'Floor restoration & Cleaning'
+  }
 ];
 
 export const Services = () => {
   return (
-    <section className="mt-12 flex flex-wrap justify-center gap-5">
+    <section className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {services.map((service) => (
         <div
           key={service.title}
