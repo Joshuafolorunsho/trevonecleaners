@@ -4,14 +4,19 @@
 
 @layer base {
   .font-outline-2 {
-    -webkit-text-stroke: 2px #99CEDC;
+    -webkit-text-stroke: 2px #99cedc;
   }
   .font-outline-4 {
-    -webkit-text-stroke: 4px #99CEDC;
+    -webkit-text-stroke: 4px #99cedc;
   }
 }
 
-
 .container {
-  @apply px-6;
+  @apply px-3;
+}
+
+@media (min-width: 640px) {
+  .container {
+    @apply px-6;
+  }
 }
