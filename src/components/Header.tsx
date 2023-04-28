@@ -99,18 +99,24 @@ export const Header = () => {
           isOpen ? 'block' : 'hidden'
         )}
       >
-        {navItems.map((item) => {
+        {navItems.map((item, idx) => {
           const isActive = item.href === router.pathname;
           return (
-            <li key={item.name}>
+            <li key={idx} onClick={() => setIsOpen((prev) => (prev = false))}>
               <Link className={clsx('', isActive && 'text-primary-100')} href={item.href}>
                 {item.name}
               </Link>
             </li>
           );
         })}
-        <LinkButton href="/book">Book Now</LinkButton>
-        <Button variant="outline" className="block lg:inline-block">
+        <LinkButton href="/book" onClick={() => setIsOpen((prev) => (prev = false))}>
+          Book Now
+        </LinkButton>
+        <Button
+          variant="outline"
+          className="block lg:inline-block"
+          onClick={() => setIsOpen((prev) => (prev = false))}
+        >
           <div className="flex items-center space-x-2">
             <svg
               width="18"

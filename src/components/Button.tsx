@@ -5,9 +5,15 @@ interface ButtonProps {
   variant?: 'primary' | 'outline';
   className?: string;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ variant = 'primary', className, children }) => {
+export const Button: React.FC<ButtonProps> = ({
+  variant = 'primary',
+  className,
+  children,
+  onClick
+}) => {
   return (
     <button
       className={clsx(
@@ -18,6 +24,7 @@ export const Button: React.FC<ButtonProps> = ({ variant = 'primary', className, 
         variant === 'outline' && ' hover:bg-primary-300 hover:text-white',
         className
       )}
+      onClick={onClick}
     >
       {children}
     </button>
