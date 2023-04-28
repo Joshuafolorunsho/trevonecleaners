@@ -17,8 +17,6 @@ export const Header = () => {
     { name: 'Contact Us', href: '/contact' }
   ];
 
-  console.log(isOpen);
-
   return (
     <header className="container mx-auto">
       <div className=" flex h-24 items-center justify-between py-3">

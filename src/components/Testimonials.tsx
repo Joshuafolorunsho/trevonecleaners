@@ -29,12 +29,12 @@ const testimonials = [
 export const Testimonials = () => {
   return (
     <>
-      <section className="mt-12 grid justify-center gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="mt-12 grid justify-center gap-5 sm:grid-cols-2 md:grid-cols-3">
         {testimonials.map((testimonial, idx) => (
           <div
             key={testimonial.name}
             className={clsx(
-              'rounded-2xl bg-white px-8 py-3 text-center last:col-span-2 sm:block lg:last:col-span-1',
+              'rounded-2xl bg-white px-8 py-3 text-center last:col-span-2 sm:block md:last:col-span-1',
               idx ? 'hidden' : 'block'
             )}
           >
