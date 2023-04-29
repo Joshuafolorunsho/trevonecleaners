@@ -7,13 +7,15 @@ interface LinkButtonProps {
   className?: string;
   children: React.ReactNode;
   href: string;
+  onClick?: () => void;
 }
 
 export const LinkButton: React.FC<LinkButtonProps> = ({
   variant = 'primary',
   className,
   children,
-  href
+  href,
+  onClick
 }) => {
   return (
     <Link
@@ -26,6 +28,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
         className
       )}
       href={href}
+      onClick={onClick}
     >
       {children}
     </Link>
