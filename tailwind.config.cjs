@@ -7,7 +7,7 @@ const config = {
         'hero-about': "url('/assets/about/building.png')",
         'hero-services': "url('/assets/services/equipment.png')",
         'hero-contact': "url('/assets/contact/office-phone.png')",
-        'hero-book': "url('/assets/book/laptop.png')",
+        'hero-book': "url('/assets/book/laptop.png')"
       },
       colors: {
         primary: {
@@ -28,6 +28,26 @@ const config = {
         lato: ['Lato', 'sans-serif'],
         'open-sans': ['Open Sans', 'sans-serif']
       }
+    },
+    screens: {
+      xm: { max: '475px' },
+      // => @media (max-width: 475px) { ... }
+      sml: '475px',
+      // => @media (min-width: 475px) { ... }
+      sm: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      md: '768px',
+      // => @media (min-width: 768px) { ... }
+
+      lg: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      xl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px'
+      // => @media (min-width: 1536px) { ... }
     }
   },
   plugins: []

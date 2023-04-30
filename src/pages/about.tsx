@@ -27,12 +27,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-10  sm:py-16">
+      <section className="py-10 md:py-16">
         <div className="container mx-auto">
-          <div className="flex items-center lg:space-x-20">
-            <div className="flex-1">
-              <h2 className="font-lato text-3xl font-bold text-primary-300 sm:text-5xl xl:text-6xl">
-                Our achievements over the years as a cleaning <span>service</span>
+          <div className=" md:flex md:space-x-20">
+            <div className="mb-5 flex-1 md:mb-0">
+              <h2 className="text-center font-lato text-3xl font-bold text-primary-300 sml:text-5xl sml:leading-[60px] md:text-left">
+                Our achievements over the years as a cleaning{' '}
+                <span className="bg-primary-100 text-white">service</span>
               </h2>
               <div className="my-4 space-y-4 text-gray-850">
                 <p>
@@ -50,12 +51,12 @@ const Index = () => {
                   closely with our clients to understand their specific cleaning needs and provide
                   customized services to meet those needs.
                 </p>
-                <div className="flex space-x-8">
-                  <div className="flex items-center space-x-1">
+                <div className="w-10/12 flex-wrap sml:flex md:w-full">
+                  <div className="flex items-center space-x-1 pb-2">
                     <CheckMark />
-                    <p className="text-lg">Get 24/7 on-demand care</p>
+                    <p className="text-lg sml:pr-5">Get 24/7 on-demand care</p>
                   </div>
-                  <div className="flex items-center space-x-1">
+                  <div className="flex items-center space-x-1 pb-2">
                     <CheckMark />
                     <p className="text-lg">Easily book cleaning</p>
                   </div>
@@ -69,19 +70,21 @@ const Index = () => {
                 width={522}
                 height={564}
                 alt="man cleaning top"
+                className="h-full w-full rounded-lg object-cover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-10 sm:py-16">
+      <section className="pb-7 md:py-12">
         <div className="container mx-auto">
-          <div className="flex items-center space-x-10">
+          <div className="items-center md:flex md:space-x-10">
             <div className="flex-1">
-              <h2 className="max-w-sm font-lato text-[64px] font-extrabold leading-[77px] text-primary-300">
+              <h2 className="text-center font-lato text-3xl font-extrabold leading-normal text-primary-300 sml:text-5xl md:max-w-sm md:text-left md:text-[64px] md:leading-[77px]">
                 Our Mission Vision & Values.
               </h2>
+              <hr className="my-4 h-[2px] bg-slate-300" />
               <p className="mt-4 text-gray-850">
                 <span className="font-bold">Our vision</span> is to be the leading cleaning and
                 janitorial services provider in Lagos and all over Nigeria. We strive to establish
@@ -104,9 +107,9 @@ const Index = () => {
                 meet the needs of our clients. Our <span className="font-bold">core values</span>{' '}
                 include:
               </p>
-              <ul className="col-span-2 mt-3 grid max-w-2xl grid-cols-2 gap-2">
+              <ul className="col-span-2 mt-3 grid max-w-2xl gap-2 gap-x-4 sm:grid-cols-2">
                 {coreValues.map((value) => (
-                  <li className="flex space-x-2 text-lg">
+                  <li className="flex space-x-2 text-base">
                     <CheckMark />
                     <span>{value}</span>
                   </li>
@@ -117,7 +120,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="bg-primary-200 py-10 sm:py-16">
+      <section className="bg-primary-200 py-10 pt-8 md:py-16">
         <div className="container mx-auto">
           <Testimonials />
         </div>

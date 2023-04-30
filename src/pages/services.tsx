@@ -94,7 +94,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-      <div className="container mx-auto my-6 space-y-12 md:space-y-6 sm:my-8 md:my-16">
+      <div className="container mx-auto my-6 space-y-8 sm:my-8 md:my-16 md:space-y-6">
         {SERVICES.map((service, index) => (
           <Service
             number={'0' + (index + 1)}

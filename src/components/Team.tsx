@@ -1,7 +1,15 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Grid } from 'swiper';
+import clsx from 'clsx';
 
 export const Team = () => {
+  const [activeIndex, setActiveIndex] = useState<Number>();
+
   const teams = [
     {
       name: 'John Doe',
@@ -36,13 +44,36 @@ export const Team = () => {
       instagramUrl: '#'
     }
   ];
+
   return (
     <div className="container mx-auto">
-      <div className="mt-6  flex flex-wrap sm:mt-12">
+      <Swiper
+        modules={[Grid]}
+        slidesPerView={1}
+        grid={{
+          rows: 1
+        }}
+        spaceBetween={20}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        breakpoints={{
+          480: {
+            slidesPerView: 2
+          },
+
+          768: {
+            slidesPerView: 3
+          },
+
+          1200: {
+            slidesPerView: 4
+          }
+        }}
+        className={clsx('mt-6 w-auto', activeIndex === teams.length - 1 ? 'pr-0' : 'pr-16 lg:pr-0')}
+      >
         {teams.map(({ name, position, image, twitterUrl, facebookUrl, instagramUrl }) => (
-          <div key={name} className="mb-8 w-full px-4 md:w-1/2 lg:w-1/4">
-            <Image src={image} width={360} height={360} alt={name} />
-            <h3 className="mt-4 text-primary-300 font-bold">{name}</h3>
+          <SwiperSlide key={name}>
+            <Image src={image} width={360} height={360} alt={name} className="w-full" />
+            <h3 className="mt-4 font-bold text-primary-300">{name}</h3>
             <p className="my-2 text-gray-750">{position}</p>
             <ul className="flex items-center space-x-2">
               <li>
@@ -61,9 +92,9 @@ export const Team = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 };
