@@ -87,7 +87,7 @@ const Index = () => {
           <div className="flex flex-col items-center justify-center">
             <h1
               style={{ backdropFilter: 'blur(4px)' }}
-              className="rounded-full border border-white bg-primary-300/40 px-6 py-3 text-4xl font-bold"
+              className="rounded-full border border-white bg-primary-300/40 px-6 py-3 text-3xl sm:text-4xl font-bold"
             >
               Our Services
             </h1>
