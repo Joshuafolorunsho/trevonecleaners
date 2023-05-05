@@ -1,7 +1,32 @@
 import React from 'react';
-import { Title } from '~/components';
+import { SelectField, Title } from '~/components';
+import { InputField } from '~/components/InputField';
+import { useForm, SubmitHandler, Control } from 'react-hook-form';
+import { error } from 'console';
+import { InputDateField } from '~/components/InputDateField';
+
+type FormValues = {
+  fullName: string;
+  phoneNum: number;
+  email: string;
+  serviceType: 'string';
+};
 
 const Index = () => {
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+    reset
+  } = useForm<FormValues>();
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data);
+
+    reset();
+  };
+
   return (
     <>
       <section className="bg-hero-book bg-cover bg-no-repeat py-8 text-white sm:py-28">
@@ -37,7 +62,7 @@ const Index = () => {
         </p>
       </section>
       <section className="container mx-auto my-16">
-        <div className="max-w-3xl mx-auto">
+        <div className="mx-auto max-w-3xl">
           <div className="flex items-center justify-center space-x-3">
             <svg
               className="h-6 w-6 sm:h-10 sm:w-10"
@@ -74,6 +99,54 @@ const Index = () => {
             booking and answer any questions you may have.
           </p>
         </div>
+        <section className="container mx-auto my-7 flex justify-center">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="w-full max-w-3xl justify-between md:flex"
+          >
+            <div className="">
+              <h3>Personal Details</h3>
+              <InputField
+                type={'text'}
+                placeholder="Full name"
+                registration={{ ...register('fullName') }}
+                hasError={errors.fullName}
+                errorMessage={errors.fullName?.message}
+                isRequired
+                className="my-3"
+              />
+              <InputField
+                type={'number'}
+                placeholder="Phone Number"
+                registration={{ ...register('phoneNum') }}
+                hasError={errors.phoneNum}
+                errorMessage={errors.phoneNum?.message}
+                isRequired
+                className="my-3"
+              />
+              <InputField
+                type={'email'}
+                placeholder="Email Address"
+                registration={{ ...register('email') }}
+                hasError={errors.email}
+                errorMessage={errors.email?.message}
+                isRequired
+                className="my-3"
+              />
+            </div>
+            <div className="">
+              <h3>Select date, time & services</h3>
+              <SelectField
+                name="serviceType"
+                placeholder="serviceType"
+                control={control as unknown as Control}
+                arr={[]}
+                hasError={errors.serviceType}
+              />
+              <InputDateField name="date" />
+            </div>
+          </form>
+        </section>
       </section>
     </>
   );
