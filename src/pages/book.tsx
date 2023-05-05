@@ -1,8 +1,9 @@
-import React from 'react';
-import { Button, SelectField, TextAreaField, Title } from '~/components';
-import { InputField } from '~/components/InputField';
 import { useForm, Control } from 'react-hook-form';
+import React from 'react';
+
+import { Button, SelectField, TextAreaField, Title } from '~/components';
 import { InputDateField } from '~/components/InputDateField';
+import { InputField } from '~/components/InputField';
 
 type FormValues = {
   fullName: string;
@@ -107,7 +108,6 @@ const Index = () => {
               <div className="flex-1">
                 <h3 className="text-lg">Personal Details</h3>
                 <InputField
-                  type={'text'}
                   placeholder="Full name"
                   registration={{ ...register('fullName') }}
                   hasError={errors.fullName}
@@ -116,7 +116,7 @@ const Index = () => {
                   className="my-3 max-w-4xl"
                 />
                 <InputField
-                  type={'number'}
+                  type='number'
                   placeholder="Phone Number"
                   registration={{ ...register('phoneNum') }}
                   hasError={errors.phoneNum}
@@ -125,7 +125,7 @@ const Index = () => {
                   className="my-3 max-w-4xl"
                 />
                 <InputField
-                  type={'email'}
+                  type='email'
                   placeholder="Email Address"
                   registration={{ ...register('email') }}
                   hasError={errors.email}
