@@ -2,7 +2,6 @@ import React from 'react';
 import { SelectField, Title } from '~/components';
 import { InputField } from '~/components/InputField';
 import { useForm, SubmitHandler, Control } from 'react-hook-form';
-import { error } from 'console';
 import { InputDateField } from '~/components/InputDateField';
 
 type FormValues = {
