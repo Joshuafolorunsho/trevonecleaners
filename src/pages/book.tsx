@@ -1,7 +1,7 @@
 import React from 'react';
 import { SelectField, Title } from '~/components';
 import { InputField } from '~/components/InputField';
-import { useForm, SubmitHandler, Control } from 'react-hook-form';
+import { useForm, Control } from 'react-hook-form';
 import { InputDateField } from '~/components/InputDateField';
 
 type FormValues = {
@@ -19,9 +19,11 @@ const Index = () => {
     control,
     formState: { errors },
     reset
-  } = useForm<FormValues>();
+  } = useForm<FormValues>({
+    defaultValues: {}
+  });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit = (data: FormValues) => {
     console.log(data);
 
     reset();
@@ -143,7 +145,11 @@ const Index = () => {
                 arr={[]}
                 hasError={errors.serviceType}
               />
-              <InputDateField name="date" hasError={errors.date} />
+              <InputDateField
+                control={control as unknown as Control}
+                name="date"
+                hasError={errors.date}
+              />
             </div>
           </form>
         </section>

@@ -38,7 +38,7 @@ export const InputDateField: React.FC<InputDateFieldProps> = ({
         </Label>
       )}
       <Controller
-        control={control}
+        control={control || undefined}
         name={name}
         render={({ field }) => (
           <DatePicker
