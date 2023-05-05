@@ -1,23 +1,23 @@
-import { Controller, FieldError, UseControllerProps } from 'react-hook-form'
-import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
-import React from 'react'
-import dayjs from 'dayjs'
-import clsx from 'clsx'
+import { Controller, FieldError, UseControllerProps } from 'react-hook-form';
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker';
+import React from 'react';
+import dayjs from 'dayjs';
+import clsx from 'clsx';
 
-import { Label } from '.'
+import { Label } from '.';
 
-type ReactDatePickPropsWithoutOnChange = Omit<ReactDatePickerProps, 'onChange'>
+type ReactDatePickPropsWithoutOnChange = Omit<ReactDatePickerProps, 'onChange'>;
 
 type InputDateFieldProps = {
-  name: string
-  label?: string
-  className?: string
-  placeholder?: string
-  hasError: FieldError | undefined
-  value?: string
-  isRequired?: boolean
+  name: string;
+  label?: string;
+  className?: string;
+  placeholder?: string;
+  hasError: FieldError | undefined;
+  value?: string;
+  isRequired?: boolean;
 } & ReactDatePickPropsWithoutOnChange &
-  UseControllerProps
+  UseControllerProps;
 
 export const InputDateField: React.FC<InputDateFieldProps> = ({
   name,
@@ -43,7 +43,7 @@ export const InputDateField: React.FC<InputDateFieldProps> = ({
         render={({ field }) => (
           <DatePicker
             className={clsx(
-              'h-12 w-full rounded-md border border-gray-150 bg-white bg-transparent px-4 font-WorkSans outline-none placeholder:text-sm placeholder:text-gray-250 focus-within:border-secondary disabled:bg-gray-100',
+              'font-WorkSans placeholder:text-gray-250 focus-within:border-secondary h-12 w-full rounded-2xl border border-gray-150 bg-gray-150 px-4 text-gray-950 placeholder-gray-950 outline-none placeholder:text-sm disabled:bg-gray-100',
               hasError && 'border-red-500',
               className
             )}
@@ -57,17 +57,14 @@ export const InputDateField: React.FC<InputDateFieldProps> = ({
             showMonthDropdown
             autoComplete="off"
             showYearDropdown
-            dropdownMode='select'
+            dropdownMode="select"
             ref={(elem) => {
-              elem &&
-                field.ref(
-                  (elem as unknown as { input: HTMLInputElement }).input
-                )
+              elem && field.ref((elem as unknown as { input: HTMLInputElement }).input);
             }}
             {...props}
           />
         )}
       />
     </>
-  )
-}
+  );
+};

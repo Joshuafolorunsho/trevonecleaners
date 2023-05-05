@@ -64,7 +64,7 @@ export const Header = () => {
               </li>
             );
           })}
-          <LinkButton href="/book">Book Now</LinkButton>
+          <LinkButton href="/book">Book Us Now</LinkButton>
           <Button variant="outline" className="block lg:inline-block">
             <div className="flex items-center space-x-2">
               <svg
@@ -110,7 +110,7 @@ export const Header = () => {
           );
         })}
         <LinkButton href="/book" onClick={() => setIsOpen((prev) => (prev = false))}>
-          Book Now
+          Book Us Now
         </LinkButton>
         <Button
           variant="outline"
