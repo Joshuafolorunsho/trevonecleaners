@@ -1,5 +1,5 @@
 import React from 'react';
-import { SelectField, Title } from '~/components';
+import { Button, SelectField, TextAreaField, Title } from '~/components';
 import { InputField } from '~/components/InputField';
 import { useForm, Control } from 'react-hook-form';
 import { InputDateField } from '~/components/InputDateField';
@@ -10,6 +10,8 @@ type FormValues = {
   email: string;
   serviceType: string;
   date: string;
+  serviceTime: string;
+  message: string;
 };
 
 const Index = () => {
@@ -19,14 +21,12 @@ const Index = () => {
     control,
     formState: { errors },
     reset
-  } = useForm<FormValues>({
-    defaultValues: {}
-  });
+  } = useForm<FormValues>();
 
   const onSubmit = (data: FormValues) => {
     console.log(data);
 
-    reset();
+    // reset();
   };
 
   return (
@@ -102,54 +102,78 @@ const Index = () => {
           </p>
         </div>
         <section className="container mx-auto my-7 flex justify-center">
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="w-full max-w-3xl justify-between md:flex"
-          >
-            <div className="">
-              <h3>Personal Details</h3>
-              <InputField
-                type={'text'}
-                placeholder="Full name"
-                registration={{ ...register('fullName') }}
-                hasError={errors.fullName}
-                errorMessage={errors.fullName?.message}
-                isRequired
-                className="my-3"
-              />
-              <InputField
-                type={'number'}
-                placeholder="Phone Number"
-                registration={{ ...register('phoneNum') }}
-                hasError={errors.phoneNum}
-                errorMessage={errors.phoneNum?.message}
-                isRequired
-                className="my-3"
-              />
-              <InputField
-                type={'email'}
-                placeholder="Email Address"
-                registration={{ ...register('email') }}
-                hasError={errors.email}
-                errorMessage={errors.email?.message}
-                isRequired
-                className="my-3"
-              />
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full md:max-w-3xl">
+            <div className="md:flex md:space-x-10">
+              <div className="flex-1">
+                <h3 className="text-lg">Personal Details</h3>
+                <InputField
+                  type={'text'}
+                  placeholder="Full name"
+                  registration={{ ...register('fullName') }}
+                  hasError={errors.fullName}
+                  errorMessage={errors.fullName?.message}
+                  isRequired
+                  className="my-3 max-w-4xl"
+                />
+                <InputField
+                  type={'number'}
+                  placeholder="Phone Number"
+                  registration={{ ...register('phoneNum') }}
+                  hasError={errors.phoneNum}
+                  errorMessage={errors.phoneNum?.message}
+                  isRequired
+                  className="my-3 max-w-4xl"
+                />
+                <InputField
+                  type={'email'}
+                  placeholder="Email Address"
+                  registration={{ ...register('email') }}
+                  hasError={errors.email}
+                  errorMessage={errors.email?.message}
+                  isRequired
+                  className="my-3 max-w-4xl"
+                />
+              </div>
+              <div className="mt-6 flex-1 md:mt-0">
+                <h3 className="text-lg">Select date, time & services</h3>
+                <SelectField
+                  name="serviceType"
+                  placeholder="Service Type"
+                  control={control as unknown as Control}
+                  arr={[]}
+                  hasError={errors.serviceType}
+                  className="my-3 max-w-4xl"
+                />
+                <InputDateField
+                  placeholder="Select Date"
+                  control={control as unknown as Control}
+                  name="date"
+                  hasError={errors.date}
+                  className="my-3 max-w-4xl"
+                  isRequired
+                />
+                <SelectField
+                  name="serviceTime"
+                  placeholder="Service Time"
+                  control={control as unknown as Control}
+                  arr={[]}
+                  hasError={errors.serviceTime}
+                  className="my-3 max-w-4xl"
+                />
+              </div>
             </div>
-            <div className="">
-              <h3>Select date, time & services</h3>
-              <SelectField
-                name="serviceType"
-                placeholder="serviceType"
-                control={control as unknown as Control}
-                arr={[]}
-                hasError={errors.serviceType}
-              />
-              <InputDateField
-                control={control as unknown as Control}
-                name="date"
-                hasError={errors.date}
-              />
+            <TextAreaField
+              id="message"
+              placeholder="message"
+              registration={{ ...register('message') }}
+              hasError={errors.message}
+              isRequired
+              className="border-gray-150 text-gray-950 placeholder-gray-150"
+            />
+            <div className="mb-2 mt-4 flex justify-center">
+              <Button type="submit" className="w-full sml:w-10/12 md:w-8/12">
+                Proceed to confirm booking
+              </Button>
             </div>
           </form>
         </section>

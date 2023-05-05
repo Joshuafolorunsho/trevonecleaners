@@ -3,12 +3,12 @@ import {
   FieldErrorsImpl,
   Merge,
   useController,
-  UseControllerProps,
-} from 'react-hook-form'
-import { Listbox, Transition } from '@headlessui/react'
-import React from 'react'
-import clsx from 'clsx'
-import { Option } from '~/types'
+  UseControllerProps
+} from 'react-hook-form';
+import { Listbox, Transition } from '@headlessui/react';
+import React from 'react';
+import clsx from 'clsx';
+import { Option } from '~/types';
 
 type HasErrorType = Merge<
   FieldError,
@@ -16,30 +16,30 @@ type HasErrorType = Merge<
     | Merge<
         FieldError,
         FieldErrorsImpl<{
-          name: string
-          id: string
+          name: string;
+          id: string;
         }>
       >
     | undefined
   )[]
->
+>;
 
 type SelectFieldProps = {
-  className?: string
-  arr: Option[]
-  isDisabled?: boolean
-  isMultiple?: boolean
-  placeholder?: string
-  isOptionClass?: string
-  hasError: HasErrorType | undefined
-  hasBorder?: boolean
-  openModal?: () => void
-} & UseControllerProps
+  className?: string;
+  arr: Option[];
+  isDisabled?: boolean;
+  isMultiple?: boolean;
+  placeholder?: string;
+  isOptionClass?: string;
+  hasError: HasErrorType | undefined;
+  hasBorder?: boolean;
+  openModal?: () => void;
+} & UseControllerProps;
 
 export const SelectField: React.FC<SelectFieldProps> = (props) => {
   const {
-    field: { value, onChange, ref },
-  } = useController(props)
+    field: { value, onChange, ref }
+  } = useController(props);
   const {
     arr,
     className,
@@ -48,23 +48,21 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
     placeholder = 'Select option',
     isMultiple = false,
     isDisabled = false,
-    isOptionClass = 'pl-10 pr-4',
-  } = props
+    isOptionClass = 'pl-10 pr-4'
+  } = props;
 
-  const hasMultipleOption = isMultiple && value && value.length > 0
+  const hasMultipleOption = isMultiple && value && value.length > 0;
 
   return (
     <div className="w-full">
       <Listbox value={value?.id} onChange={onChange} multiple={isMultiple}>
-        <div className="relative">
+        <div className="relative ">
           <Listbox.Button
             className={clsx(
-              'block h-12 w-full rounded-md border border-gray-250 px-4 text-left text-sm text-[#6BF44]',
+              'border-gray-250 block h-12 w-full rounded-2xl border px-4 text-left text-sm text-gray-950 ',
               hasError && 'border-red-500',
               !hasBorder && 'border-transparent px-0',
-              isDisabled
-                ? 'pointer-events-none cursor-not-allowed bg-gray-100'
-                : 'bg-white',
+              isDisabled ? 'pointer-events-none cursor-not-allowed bg-gray-100' : ' bg-gray-150',
               className
             )}
           >
@@ -73,18 +71,12 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
                 {value?.id ? (
                   (value as Option).name
                 ) : (
-                  <span className="text-sm font-light text-gray-500">
-                    {placeholder}
-                  </span>
+                  <span className="text-sm font-light text-gray-950">{placeholder}</span>
                 )}
               </span>
             )}
 
-            {isMultiple && (
-              <span className="text-sm font-light text-gray-500">
-                {placeholder}
-              </span>
-            )}
+            {isMultiple && <span className="text-sm font-light text-gray-950">{placeholder}</span>}
 
             <span
               className={clsx(
@@ -118,12 +110,12 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
                 .filter((option: Option) => option.id !== 'all')
                 .map((option: Option) => {
                   const handleRemove = (id: string) => {
-                    const newValue = value.filter((o: Option) => o.id !== id)
-                    onChange(newValue)
-                  }
+                    const newValue = value.filter((o: Option) => o.id !== id);
+                    onChange(newValue);
+                  };
                   return (
                     <div
-                      className="flex  items-center space-x-1 bg-secondary/20 pl-2 text-sm"
+                      className="bg-secondary/20  flex items-center space-x-1 pl-2 text-sm"
                       key={option.id}
                     >
                       <p className="py-1">{option.name}</p>
@@ -135,7 +127,7 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
                         <span className="font-medium">x</span>
                       </button>
                     </div>
-                  )
+                  );
                 })}
             </div>
           )}
@@ -159,11 +151,9 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
                     key={obj.id}
                     className={({ active }) =>
                       clsx(
-                        'relative cursor-pointer py-2 group',
+                        'group relative cursor-pointer py-2',
                         isOptionClass,
-                        active
-                          ? 'bg-secondary bg-opacity-80 text-white'
-                          : 'text-gray-900',
+                        active ? 'bg-secondary bg-opacity-80 text-white' : 'text-gray-900',
                         !(arr.length - 1 === index) && 'border-b'
                       )
                     }
@@ -173,9 +163,7 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
                       return (
                         <>
                           <span
-                            className={`block truncate ${
-                              selected ? 'font-medium' : 'font-normal'
-                            }`}
+                            className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}
                           >
                             {obj.name}
                           </span>
@@ -196,19 +184,17 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
                             </span>
                           ) : null}
                         </>
-                      )
+                      );
                     }}
                   </Listbox.Option>
                 ))}
               {arr.length === 0 && (
-                <p className="w-full px-5 py-1 text-sm text-gray-600">
-                  No options
-                </p>
+                <p className="w-full px-5 py-1 text-sm text-gray-600">No options</p>
               )}
             </Listbox.Options>
           </Transition>
         </div>
       </Listbox>
     </div>
-  )
-}
+  );
+};
