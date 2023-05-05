@@ -9,7 +9,8 @@ type FormValues = {
   fullName: string;
   phoneNum: number;
   email: string;
-  serviceType: 'string';
+  serviceType: string;
+  date: string;
 };
 
 const Index = () => {
@@ -143,7 +144,7 @@ const Index = () => {
                 arr={[]}
                 hasError={errors.serviceType}
               />
-              <InputDateField name="date" />
+              <InputDateField name="date" hasError={errors.date} />
             </div>
           </form>
         </section>
