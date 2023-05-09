@@ -1,5 +1,6 @@
 import { Controller, FieldError, UseControllerProps } from 'react-hook-form';
 import DatePicker, { ReactDatePickerProps } from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import React from 'react';
 import dayjs from 'dayjs';
 import clsx from 'clsx';
@@ -43,11 +44,11 @@ export const InputDateField: React.FC<InputDateFieldProps> = ({
         render={({ field }) => (
           <DatePicker
             className={clsx(
-              'font-WorkSans placeholder:text-gray-250 focus-within:border-secondary h-12 w-full rounded-2xl border border-gray-150 bg-gray-150 px-4 text-gray-950 placeholder-gray-950 outline-none placeholder:text-sm disabled:bg-gray-100',
+              'font-WorkSans focus-within:border-secondary h-12 w-full rounded-2xl border border-gray-150 bg-gray-150 px-4 text-gray-950 placeholder-gray-950 outline-none placeholder:text-sm placeholder:text-gray-950 disabled:bg-gray-100',
               hasError && 'border-red-500',
               className
             )}
-            formatWeekDay={(day) => dayjs(day).format('ddd')}
+            // formatWeekDay={(day) => dayjs(day).format('ddd')}
             placeholderText={placeholder}
             closeOnScroll={true}
             selected={field.value}
