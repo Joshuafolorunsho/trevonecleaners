@@ -225,7 +225,7 @@ const Index = () => {
               </div>
               <TextAreaField
                 id="message"
-                placeholder="message"
+                placeholder="Message"
                 registration={{ ...register('message') }}
                 errorMessage={errors.message?.message}
                 hasError={errors.message}
@@ -242,9 +242,9 @@ const Index = () => {
         </section>
       ) : (
         <section className="mx-1 mb-14 mt-12 flex justify-center">
-          <div className="w-full p-5 text-gray-950 shadow-xl sml:max-w-lg">
-            <h2 className="py-3 text-3xl font-semibold">Booking Details</h2>
-            <div className="border-y-2 border-gray-850">
+          <div className="w-full rounded-xl p-5 text-gray-950 shadow-xl shadow-slate-300 sml:max-w-lg">
+            <h2 className="py-3 text-2xl font-semibold sm:text-3xl">Booking Details</h2>
+            <div className="border-y border-gray-850">
               <p className="pt-5 text-gray-750">Name</p>
               <div className="flex flex-wrap justify-between pb-6">
                 <p className="flex-1 font-bold ">{formData?.fullName}</p>
@@ -253,18 +253,14 @@ const Index = () => {
                 </Link>
               </div>
               <p className="text-gray-750">Email Address</p>
-              <p className="flex-1 break-words pb-6 font-bold">
-                {formData?.email || 'emaxj962@gmail.com'}
-              </p>
+              <p className="flex-1 break-words pb-6 font-bold">{formData?.email}</p>
               <p className="text-gray-750">Phone Number</p>
               <p className="flex-1 pb-4 font-bold">{formData?.phoneNum}</p>
             </div>
-            <div className="border-b-2 border-gray-850 pt-2">
+            <div className="border-b border-gray-850 pt-2">
               <p className="pt-5 text-gray-750">Service Type</p>
               <div className="flex flex-wrap justify-between pb-6">
-                <p className="flex-1 font-bold ">
-                  {formData?.serviceType.id || 'General Cleaning'}
-                </p>
+                <p className="flex-1 font-bold ">{formData?.serviceType.id}</p>
                 <Link href="" className="text-blue-750 hover:text-blue-900">
                   Change
                 </Link>

@@ -60,9 +60,11 @@ const Index = () => {
       <section className="container mx-auto my-8">
         <div className="rounded-3xl bg-white p-8 shadow-lg shadow-gray-300 sm:rounded-[40px] md:flex md:space-x-14 lg:items-center">
           <div className="flex-1">
-            <h2 className="text-4xl font-semibold text-gray-950">Contact Us Today</h2>
-            <p className="mt-1 text-xl text-gray-850 sm:text-2xl">
-              We will give you call to follow up
+            <h2 className="pb-1 text-2xl font-semibold text-gray-950 sml:text-4xl">
+              Contact Us Today
+            </h2>
+            <p className="mt-1 text-base text-gray-850 sml:text-2xl">
+              We will give you call to follow up.
             </p>
             <form onSubmit={handleSubmit(onSubmit)} className="mt-2 w-full">
               <div className="flex-1">
@@ -96,7 +98,7 @@ const Index = () => {
               </div>
               <TextAreaField
                 id="message"
-                placeholder="message"
+                placeholder="Message"
                 registration={{ ...register('message') }}
                 errorMessage={errors.message?.message}
                 hasError={errors.message}
@@ -159,7 +161,7 @@ const Index = () => {
                   />
                 </svg>
               </span>
-              <p className="overflow break-words font-bold text-gray-950">Consult@trevoneCS.com</p>
+              <p className="break-words font-bold text-gray-950">Consult@trevoneCS.com</p>
             </div>
 
             <p className="pl-14 text-gray-850">Drop us a message</p>
