@@ -55,11 +55,11 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
 
   return (
     <div className="w-full">
-      <Listbox value={value?.id} onChange={onChange} multiple={isMultiple}>
+      <Listbox value={value?.id || ''} onChange={onChange} multiple={isMultiple}>
         <div className="relative ">
           <Listbox.Button
             className={clsx(
-              'border-gray-250 block h-12 w-full rounded-2xl border px-4 text-left text-sm text-gray-950 ',
+              'block h-12 w-full rounded-2xl border border-gray-250 px-4 text-left text-sm text-gray-950 ',
               hasError && 'border-red-500',
               !hasBorder && 'border-transparent px-0',
               isDisabled ? 'pointer-events-none cursor-not-allowed bg-gray-100' : ' bg-gray-150',
@@ -71,7 +71,7 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
                 {value?.id ? (
                   (value as Option).name
                 ) : (
-                  <span className="text-sm font-light text-gray-950">{placeholder}</span>
+                  <span className="text-gray-0 text-sm font-light">{placeholder}</span>
                 )}
               </span>
             )}
@@ -146,7 +146,7 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
               ref={ref}
             >
               {arr &&
-                arr.map((obj, index) => (
+                arr.map((obj: { id: string; name: string }, index: Number) => (
                   <Listbox.Option
                     key={obj.id}
                     className={({ active }) =>

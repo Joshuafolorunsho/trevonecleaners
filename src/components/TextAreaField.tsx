@@ -1,6 +1,7 @@
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
 import * as React from 'react';
 import clsx from 'clsx';
+import { ErrorMessage } from './ErrorMessage';
 
 interface TextAreaFieldProps {
   id: string;
@@ -14,6 +15,7 @@ interface TextAreaFieldProps {
   rows?: number;
   limit?: number | null;
   value?: string;
+  errorMessage?: string;
 }
 
 export const TextAreaField: React.FunctionComponent<TextAreaFieldProps> = ({
@@ -25,7 +27,8 @@ export const TextAreaField: React.FunctionComponent<TextAreaFieldProps> = ({
   rows = 5,
   hasError,
   limit = 500,
-  value
+  value,
+  errorMessage
 }) => {
   return (
     <>
@@ -42,6 +45,7 @@ export const TextAreaField: React.FunctionComponent<TextAreaFieldProps> = ({
         {...registration}
         maxLength={limit ? limit : undefined}
       />
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       {limit && (
         <div className="mt-2 flex justify-between text-xs">
           <p className="text-gray-150">Max. {limit} characters</p>
