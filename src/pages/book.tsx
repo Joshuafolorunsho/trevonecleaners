@@ -32,20 +32,16 @@ const schema = yup
     date: yup.date().required('This field is required'),
     serviceType: yup.mixed().required('This field is required'),
     serviceTime: yup.mixed().required('This field is required'),
-    message: yup
-      .string()
-      .required('This field is required')
-      .min(1, 'Must be more than 1 character')
-      .max(500, 'Not more than 500 characters')
+    message: yup.string().required('This field is required')
+    // .min(1, 'Must be more than 1 character')
+    // .max(500, 'Not more than 500 characters')
   })
   .required();
 
 const Index = () => {
   const [formData, setFormData] = useState<FormValues>();
   const formatDate: string[] =
-    formData?.date !== undefined
-      ? new Date(formData.date).toString().split(' ')
-      : [' ', 'Feb', '14', '2023'];
+    formData?.date !== undefined ? new Date(formData.date).toString().split(' ') : [];
   const {
     register,
     handleSubmit,
@@ -60,7 +56,7 @@ const Index = () => {
     reset();
   };
 
-  const options = [
+  const services = [
     {
       id: 'General Cleaning',
       name: 'General Cleaning'
@@ -205,7 +201,7 @@ const Index = () => {
                     name="serviceType"
                     placeholder="Service Type"
                     control={control as unknown as Control}
-                    arr={options}
+                    arr={services}
                     hasError={errors.serviceType}
                     className="my-3 max-w-4xl"
                   />
@@ -251,7 +247,7 @@ const Index = () => {
             <div className="border-y-2 border-gray-850">
               <p className="pt-5 text-gray-750">Name</p>
               <div className="flex flex-wrap justify-between pb-6">
-                <p className="flex-1 font-bold ">{formData?.fullName || 'Joseph Emmanuel'}</p>
+                <p className="flex-1 font-bold ">{formData?.fullName}</p>
                 <Link href="" className="text-blue-750 hover:text-blue-900">
                   Edit
                 </Link>
@@ -261,7 +257,7 @@ const Index = () => {
                 {formData?.email || 'emaxj962@gmail.com'}
               </p>
               <p className="text-gray-750">Phone Number</p>
-              <p className="flex-1 pb-4 font-bold">{formData?.phoneNum || '090 301 79104'}</p>
+              <p className="flex-1 pb-4 font-bold">{formData?.phoneNum}</p>
             </div>
             <div className="border-b-2 border-gray-850 pt-2">
               <p className="pt-5 text-gray-750">Service Type</p>
@@ -278,7 +274,7 @@ const Index = () => {
                 {`${formatDate[2]} ${formatDate[1]}, ${formatDate[3]}`}
               </p>
               <p className="text-gray-750">Service Time</p>
-              <p className="flex-1 pb-4 font-bold">{formData?.serviceTime.id || 'Morning'}</p>
+              <p className="flex-1 pb-4 font-bold">{formData?.serviceTime.id}</p>
             </div>
             <Button className="mb-5 mt-8 w-full">Proceed to confirm booking</Button>
           </div>
