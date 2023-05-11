@@ -87,25 +87,27 @@ const Index = () => {
           <div className="flex flex-col items-center justify-center">
             <h1
               style={{ backdropFilter: 'blur(4px)' }}
-              className="rounded-full border border-white bg-primary-300/40 px-6 py-3 text-3xl sm:text-4xl font-bold"
+              className="rounded-full border border-white bg-primary-300/40 px-6 py-3 text-3xl font-bold sm:text-4xl"
             >
               Our Services
             </h1>
           </div>
         </div>
       </section>
-      <div className="container mx-auto my-6 space-y-8 sm:my-8 md:my-16 md:space-y-6">
-        {SERVICES.map((service, index) => (
-          <Service
-            number={'0' + (index + 1)}
-            key={service.title}
-            title={service.title}
-            description={service.description}
-            image={service.imgUrl}
-            isTextRight={index % 2 === 0}
-          />
-        ))}
-      </div>
+      <section className="bg-gray-50 py-6">
+        <div className="space-y-8sm:my-8 container mx-auto md:my-16 md:space-y-6">
+          {SERVICES.map((service, index) => (
+            <Service
+              number={'0' + (index + 1)}
+              key={service.title}
+              title={service.title}
+              description={service.description}
+              image={service.imgUrl}
+              isTextRight={index % 2 === 0}
+            />
+          ))}
+        </div>
+      </section>
 
       <FAQ bgColor="#E4F2F6" />
     </>

@@ -29,12 +29,12 @@ const testimonials = [
 export const Testimonials = () => {
   return (
     <>
-      <section className="mt-12 grid justify-center gap-5 sm:grid-cols-2 md:grid-cols-3">
+      <section className="mb-10 mt-12 grid justify-center gap-5 sm:grid-cols-2 md:grid-cols-3">
         {testimonials.map((testimonial, idx) => (
           <div
             key={testimonial.name}
             className={clsx(
-              'rounded-2xl bg-white px-8 py-3 text-center last:col-span-2 sm:block md:last:col-span-1',
+              'ease rounded-2xl border border-transparent bg-white px-8 py-5 text-center font-open-sans leading-7 shadow-slate-400 transition duration-[1s] last:col-span-2 hover:border-gray-400 hover:shadow-md sm:block md:last:col-span-1',
               idx ? 'hidden' : 'block'
             )}
           >
@@ -61,8 +61,8 @@ export const Testimonials = () => {
           </div>
         ))}
       </section>
-      <div className="mt-10 flex justify-center">
-        <LinkButton href="" className="text-primary-300" variant="outline">
+      <div className="flex justify-center">
+        <LinkButton href="/about" className="text-primary-300" variant="outline">
           View all Testimonials
         </LinkButton>
       </div>

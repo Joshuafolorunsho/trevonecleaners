@@ -29,7 +29,7 @@ export const Header = () => {
         </a>
 
         <button
-          className="h- group flex h-12 w-12 flex-col items-center justify-center lg:hidden"
+          className="group flex h-12 w-12 flex-col items-center justify-center lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
         >
           <div

@@ -38,7 +38,7 @@ export const TextAreaField: React.FunctionComponent<TextAreaFieldProps> = ({
         autoFocus={autoFocus}
         rows={rows}
         className={clsx(
-          'font-WorkSans focus-within:border-secondary w-full rounded-2xl border border-gray-150 bg-gray-150 px-4 py-4 outline-none placeholder:text-sm placeholder:text-gray-950 disabled:bg-gray-100',
+          'font-WorkSans focus-within:border-secondary w-full rounded-2xl border border-gray-150 bg-gray-150 px-4 py-6 outline-none placeholder:text-sm placeholder:text-gray-950 disabled:bg-gray-100',
           hasError && 'border-red-500',
           className
         )}

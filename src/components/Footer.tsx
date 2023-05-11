@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { Button } from './Button';
+import { LinkButton } from './LinkButton';
 
 export const Footer = () => {
   const aboutLinks = [
@@ -67,18 +67,18 @@ export const Footer = () => {
     }
   ];
   return (
-    <footer className="border-t border-t-gray-750 pb-6 pt-12">
+    <footer className="border-t border-t-gray-750 bg-white pb-6 pt-12">
       <div className="container mx-auto">
-        <div className="justify-center text-center sm:grid sm:grid-cols-3 sm:text-left lg:grid-cols-5">
+        <div className="justify-between text-center sm:grid sm:grid-cols-3 sm:text-left lg:grid-cols-5">
           <div className="mb-4 grid justify-center sm:justify-start">
             <Image src="/assets/logo.png" width={164} height={64} alt="trevone logo" />
           </div>
-          <div className="col-span-2 grid justify-center gap-y-6 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-4">
+          <div className="col-span-2 grid gap-y-6 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-6">
             <div className="order-2 sm:order-1">
-              <h3 className="text-lg font-bold">About</h3>
+              <h3 className="text-xl font-bold">About</h3>
               <ul className="mt-4 space-y-3">
                 {aboutLinks.map(({ href, title }, index) => (
-                  <li key={index}>
+                  <li className="py-2 text-lg" key={index}>
                     <Link href={href} className="text-gray-850 hover:text-gray-900">
                       {title}
                     </Link>
@@ -86,11 +86,11 @@ export const Footer = () => {
                 ))}
               </ul>
             </div>
-            <div className="order-3 sm:order-2">
-              <h3 className="text-lg font-bold">Services</h3>
+            <div className="order-3 sm:order-2 lg:col-span-2">
+              <h3 className="text-xl font-bold">Services</h3>
               <ul className="mt-4 space-y-3">
                 {servicesLinks.map(({ href, title }, index) => (
-                  <li key={index}>
+                  <li className="py-2 text-lg" key={index}>
                     <Link href={href} className="text-gray-850 hover:text-gray-900">
                       {title}
                     </Link>
@@ -99,22 +99,23 @@ export const Footer = () => {
               </ul>
             </div>
             <div className="order-4 sm:order-3">
-              <h3 className="text-lg font-bold">Help</h3>
+              <h3 className="text-xl font-bold">Help</h3>
               <ul className="mt-4 space-y-3">
-                <li>
+                <li className="py-2 text-lg">
                   <Link href="#" className="text-gray-850 hover:text-gray-900">
                     FAQ
                   </Link>
                 </li>
-                <li>
+                <li className="py-2 text-lg">
                   <Link href="#" className="text-gray-850 hover:text-gray-900">
                     Get in Touch
                   </Link>
                 </li>
+                <li className="py-2 text-lg text-gray-850 hover:text-gray-900">@trevonenigeria</li>
               </ul>
               <ul className="mt-3 flex items-center justify-center space-x-3 sm:justify-start">
                 {socialLinks.map(({ href, title, icon }, index) => (
-                  <li key={index}>
+                  <li className="py-2 text-lg" key={index}>
                     <Link href={href} title={title}>
                       <Image src={icon} width={28} height={28} alt={title} />
                     </Link>
@@ -122,11 +123,18 @@ export const Footer = () => {
                 ))}
               </ul>
             </div>
-            <div className="order-1 sm:order-4">
-              <h3 className="text-lg font-bold">Make your booking</h3>
-              <p className="mt-4 text-gray-850">We have a dedicated team of specialists for you.</p>
-              <Button className="mt-4 w-full px-6 hover:bg-primary-300">Book Cleaning</Button>
-              <p className="mt-4 flex items-center justify-center space-x-2 sm:justify-start">
+            <div className="order-1 sm:order-4 lg:col-span-2 lg:pl-8">
+              <h3 className="text-xl font-bold">Make your booking</h3>
+              <p className="mt-4 text-lg text-gray-850">
+                We have a dedicated team of specialists for you.
+              </p>
+              <LinkButton
+                href="/book"
+                className="mt-4 w-full max-w-md px-6 text-center text-lg hover:bg-primary-300"
+              >
+                Book Cleaning
+              </LinkButton>
+              <p className="mt-14 flex items-center justify-center space-x-2 text-lg sm:justify-start">
                 <span>Call Us:</span>
                 <Image src="/assets/icons/phone.svg" width={24} height={24} alt="phone" />
                 <a
@@ -140,7 +148,12 @@ export const Footer = () => {
           </div>
         </div>
         <hr className="my-6 lg:my-8" />
-        <p className="text-center text-gray-850">© 2023 Trevone Nigeria. All rights reserved</p>
+        <p className="text-center text-gray-850">
+          <span className="w- mr-1 inline-block h-10 w-10 rounded-full border border-gray-850 p-2 text-base">
+            c
+          </span>{' '}
+          2023 Trevone Nigeria. All rights reserved
+        </p>
       </div>
     </footer>
   );

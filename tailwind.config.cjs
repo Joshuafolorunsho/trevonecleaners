@@ -27,6 +27,7 @@ const config = {
           950: '#1E2324'
         },
         blue: {
+          50: '#FBFDFE',
           750: '#0B32FF'
         }
       },

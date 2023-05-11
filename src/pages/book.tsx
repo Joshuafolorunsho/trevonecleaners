@@ -89,7 +89,7 @@ const Index = () => {
   ];
 
   return (
-    <>
+    <div className="bg-blue-50">
       <section className="bg-hero-book bg-cover bg-no-repeat py-8 text-white sm:py-28">
         <div className="container mx-auto">
           <div className="flex flex-col items-center justify-center">
@@ -102,6 +102,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <section className="p-8"></section>
       <section className=" bg-primary-300/90 text-center">
         <p className="container mx-auto flex flex-col  items-center justify-center gap-3 py-5 text-white  sm:flex-row md:py-8">
           <svg
@@ -122,161 +123,166 @@ const Index = () => {
           </span>
         </p>
       </section>
-      {!isSubmitSuccessful ? (
-        <section className="container mx-auto my-16 rounded-2xl py-2 shadow-lg">
-          <div className="mx-auto md:max-w-2xl">
-            <div className="flex items-center justify-center space-x-3">
-              <svg
-                className="h-6 w-6 sm:h-10 sm:w-10"
-                viewBox="0 0 35 34"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.5 33H25.5"
-                  stroke="#4EABC2"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M1.5 25V4.2C1.5 3.35131 1.83714 2.53737 2.43726 1.93726C3.03737 1.33714 3.85131 1 4.7 1H30.3C31.1487 1 31.9626 1.33714 32.5627 1.93726C33.1629 2.53737 33.5 3.35131 33.5 4.2V25C33.5 25.8487 33.1629 26.6626 32.5627 27.2627C31.9626 27.8629 31.1487 28.2 30.3 28.2H4.7C3.85131 28.2 3.03737 27.8629 2.43726 27.2627C1.83714 26.6626 1.5 25.8487 1.5 25Z"
-                  fill="#4EABC2"
-                  stroke="#4EABC2"
-                  strokeWidth="1.5"
-                />
-                <path
-                  d="M12.6992 14.6L15.8992 17.8L22.2992 11.4"
-                  stroke="white"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-xl font-semibold text-gray-950 sm:text-2xl">
-                Ready to book our services?
-              </span>
-            </div>
-            <p className="mt-2 text-center text-gray-850 sm:text-lg">
-              It's easy! Simply fill out the form below with your contact information and the
-              details of the services you need. Our team will be in touch with you promptly to
-              confirm your booking and answer any questions you may have.
-            </p>
-          </div>
-          <section className="my-7 flex justify-center">
-            <form onSubmit={handleSubmit(onSubmit)} className="w-full md:max-w-3xl">
-              <div className="md:flex md:space-x-10">
-                <div className="flex-1">
-                  <h3 className="text-lg">Personal Details</h3>
-                  <InputField
-                    placeholder="Full name"
-                    registration={{ ...register('fullName') }}
-                    hasError={errors.fullName}
-                    errorMessage={errors.fullName?.message}
-                    isRequired
-                    className="my-3 max-w-4xl"
+      <section className="py-16">
+        {!isSubmitSuccessful ? (
+          <section className="container mx-auto rounded-2xl bg-white py-7 shadow-lg">
+            <div className="mx-auto md:max-w-3xl">
+              <div className="flex items-center justify-center space-x-3">
+                <svg
+                  className="h-6 w-6 sm:h-10 sm:w-10"
+                  viewBox="0 0 35 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.5 33H25.5"
+                    stroke="#4EABC2"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
-                  <InputField
-                    type="number"
-                    placeholder="Phone Number"
-                    registration={{ ...register('phoneNum') }}
-                    hasError={errors.phoneNum}
-                    errorMessage={errors.phoneNum?.message}
-                    isRequired
-                    className="my-3 max-w-4xl"
+                  <path
+                    d="M1.5 25V4.2C1.5 3.35131 1.83714 2.53737 2.43726 1.93726C3.03737 1.33714 3.85131 1 4.7 1H30.3C31.1487 1 31.9626 1.33714 32.5627 1.93726C33.1629 2.53737 33.5 3.35131 33.5 4.2V25C33.5 25.8487 33.1629 26.6626 32.5627 27.2627C31.9626 27.8629 31.1487 28.2 30.3 28.2H4.7C3.85131 28.2 3.03737 27.8629 2.43726 27.2627C1.83714 26.6626 1.5 25.8487 1.5 25Z"
+                    fill="#4EABC2"
+                    stroke="#4EABC2"
+                    strokeWidth="1.5"
                   />
-                  <InputField
-                    type="email"
-                    placeholder="Email Address"
-                    registration={{ ...register('email') }}
-                    hasError={errors.email}
-                    errorMessage={errors.email?.message}
-                    isRequired
-                    className="my-3 max-w-4xl"
+                  <path
+                    d="M12.6992 14.6L15.8992 17.8L22.2992 11.4"
+                    stroke="white"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
-                </div>
-                <div className="mt-6 flex-1 md:mt-0">
-                  <h3 className="text-lg">Select date, time & services</h3>
-                  <SelectField
-                    name="serviceType"
-                    placeholder="Service Type"
-                    control={control as unknown as Control}
-                    arr={services}
-                    hasError={errors.serviceType}
-                    className="my-3 max-w-4xl"
-                  />
-                  <InputDateField
-                    placeholder="Select Date"
-                    control={control as unknown as Control}
-                    name="date"
-                    hasError={errors.date}
-                    className="my-3 max-w-4xl"
-                    isRequired
-                  />
-                  <SelectField
-                    name="serviceTime"
-                    placeholder="Service Time"
-                    control={control as unknown as Control}
-                    arr={time}
-                    hasError={errors.serviceTime}
-                    className="my-3 max-w-4xl"
-                  />
-                </div>
+                </svg>
+                <span className="py-1 text-2xl font-bold text-gray-950 sm:text-4xl">
+                  Ready to book our services?
+                </span>
               </div>
-              <TextAreaField
-                id="message"
-                placeholder="Message"
-                registration={{ ...register('message') }}
-                errorMessage={errors.message?.message}
-                hasError={errors.message}
-                isRequired
-                className="mb-1 mt-2 border-gray-150 text-gray-950 placeholder-gray-150"
-              />
-              <div className="mb-2 mt-4 flex justify-center">
-                <Button type="submit" className="w-full sml:w-10/12 md:w-8/12">
-                  Proceed to confirm booking
-                </Button>
-              </div>
-            </form>
-          </section>
-        </section>
-      ) : (
-        <section className="mx-1 mb-14 mt-12 flex justify-center">
-          <div className="w-full rounded-xl p-5 text-gray-950 shadow-xl shadow-slate-300 sml:max-w-lg">
-            <h2 className="py-3 text-2xl font-semibold sm:text-3xl">Booking Details</h2>
-            <div className="border-y border-gray-850">
-              <p className="pt-5 text-gray-750">Name</p>
-              <div className="flex flex-wrap justify-between pb-6">
-                <p className="flex-1 font-bold ">{formData?.fullName}</p>
-                <Link href="" className="text-blue-750 hover:text-blue-900">
-                  Edit
-                </Link>
-              </div>
-              <p className="text-gray-750">Email Address</p>
-              <p className="flex-1 break-words pb-6 font-bold">{formData?.email}</p>
-              <p className="text-gray-750">Phone Number</p>
-              <p className="flex-1 pb-4 font-bold">{formData?.phoneNum}</p>
-            </div>
-            <div className="border-b border-gray-850 pt-2">
-              <p className="pt-5 text-gray-750">Service Type</p>
-              <div className="flex flex-wrap justify-between pb-6">
-                <p className="flex-1 font-bold ">{formData?.serviceType.id}</p>
-                <Link href="" className="text-blue-750 hover:text-blue-900">
-                  Change
-                </Link>
-              </div>
-              <p className="text-gray-750">Service Date</p>
-              <p className="flex-1 pb-6 font-bold">
-                {`${formatDate[2]} ${formatDate[1]}, ${formatDate[3]}`}
+              <p className="mt-2 text-center font-open-sans text-gray-850 sm:text-lg">
+                It's easy! Simply fill out the form below with your contact information and the
+                details of the services you need. Our team will be in touch with you promptly to
+                confirm your booking and answer any questions you may have.
               </p>
-              <p className="text-gray-750">Service Time</p>
-              <p className="flex-1 pb-4 font-bold">{formData?.serviceTime.id}</p>
             </div>
-            <Button className="mb-5 mt-8 w-full">Proceed to confirm booking</Button>
-          </div>
-        </section>
-      )}
-    </>
+            <section className="my-7 flex justify-center">
+              <form onSubmit={handleSubmit(onSubmit)} className="w-full md:max-w-4xl">
+                <div className="md:flex md:space-x-10">
+                  <div className="flex-1">
+                    <h3 className="text-lg">Personal Details</h3>
+                    <InputField
+                      placeholder="Full Name"
+                      registration={{ ...register('fullName') }}
+                      hasError={errors.fullName}
+                      errorMessage={errors.fullName?.message}
+                      isRequired
+                      className="my-3 max-w-4xl"
+                    />
+                    <InputField
+                      type="number"
+                      placeholder="Phone Number"
+                      registration={{ ...register('phoneNum') }}
+                      hasError={errors.phoneNum}
+                      errorMessage={errors.phoneNum?.message}
+                      isRequired
+                      className="my-3 max-w-4xl"
+                    />
+                    <InputField
+                      type="email"
+                      placeholder="Email Address"
+                      registration={{ ...register('email') }}
+                      hasError={errors.email}
+                      errorMessage={errors.email?.message}
+                      isRequired
+                      className="my-3 max-w-4xl"
+                    />
+                  </div>
+                  <div className="mt-6 flex-1 md:mt-0">
+                    <h3 className="text-lg">Select date, time & services</h3>
+                    <SelectField
+                      name="serviceType"
+                      placeholder="Service Type"
+                      control={control as unknown as Control}
+                      arr={services}
+                      errorMessage={errors.serviceType?.message}
+                      hasError={errors.serviceType}
+                      className="my-3 max-w-4xl"
+                    />
+                    <InputDateField
+                      placeholder="Select Date"
+                      control={control as unknown as Control}
+                      name="date"
+                      errorMessage={errors.date?.message}
+                      hasError={errors.date}
+                      className="my-3 max-w-4xl"
+                      isRequired
+                    />
+                    <SelectField
+                      name="serviceTime"
+                      placeholder="Service Time"
+                      control={control as unknown as Control}
+                      arr={time}
+                      errorMessage={errors.serviceTime?.message}
+                      hasError={errors.serviceTime}
+                      className="my-3 max-w-4xl"
+                    />
+                  </div>
+                </div>
+                <TextAreaField
+                  id="message"
+                  placeholder="Message"
+                  registration={{ ...register('message') }}
+                  errorMessage={errors.message?.message}
+                  hasError={errors.message}
+                  isRequired
+                  className="mb-1 mt-2 border-gray-150 text-gray-950 placeholder-gray-150"
+                />
+                <div className="mb-2 mt-4 flex justify-center">
+                  <Button type="submit" className="w-full sml:w-10/12 md:w-8/12">
+                    Proceed to confirm booking
+                  </Button>
+                </div>
+              </form>
+            </section>
+          </section>
+        ) : (
+          <section className="mx-1 mb-14 mt-12 flex justify-center">
+            <div className="w-full rounded-xl p-5 text-gray-950 shadow-xl shadow-slate-300 sml:max-w-lg">
+              <h2 className="py-3 text-2xl font-semibold sm:text-3xl">Booking Details</h2>
+              <div className="border-y border-gray-850">
+                <p className="pt-5 text-gray-750">Name</p>
+                <div className="flex flex-wrap justify-between pb-6">
+                  <p className="flex-1 font-bold ">{formData?.fullName}</p>
+                  <Link href="" className="font-semibold text-blue-750 hover:text-blue-900">
+                    Edit
+                  </Link>
+                </div>
+                <p className="text-gray-750">Email Address</p>
+                <p className="flex-1 break-words pb-6 font-bold">{formData?.email}</p>
+                <p className="text-gray-750">Phone Number</p>
+                <p className="flex-1 pb-4 font-bold">{formData?.phoneNum}</p>
+              </div>
+              <div className="border-b border-gray-850 pt-2">
+                <p className="pt-5 text-gray-750">Service Type</p>
+                <div className="flex flex-wrap justify-between pb-6">
+                  <p className="flex-1 font-bold ">{formData?.serviceType.id}</p>
+                  <Link href="" className="font-semibold text-blue-750 hover:text-blue-900">
+                    Change
+                  </Link>
+                </div>
+                <p className="text-gray-750">Service Date</p>
+                <p className="flex-1 pb-6 font-bold">
+                  {`${formatDate[2]} ${formatDate[1]}, ${formatDate[3]}`}
+                </p>
+                <p className="text-gray-750">Service Time</p>
+                <p className="flex-1 pb-4 font-bold">{formData?.serviceTime.id}</p>
+              </div>
+              <Button className="mb-5 mt-8 w-full">Proceed to confirm booking</Button>
+            </div>
+          </section>
+        )}
+      </section>
+    </div>
   );
 };
 

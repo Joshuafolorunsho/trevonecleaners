@@ -20,11 +20,9 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
   return (
     <Link
       className={clsx(
-        'inline-block rounded-full border border-primary-100 px-5 py-3 font-open-sans font-semibold',
+        'inline-block rounded-full border border-primary-100 px-5 py-3 font-open-sans font-semibold hover:bg-white hover:text-gray-900',
         variant === 'primary' && 'bg-primary-100 text-white',
-        variant === 'primary' && 'hover:bg-primary-300',
         variant === 'outline' && 'text-gray-950',
-        variant === 'outline' && ' hover:bg-primary-300 hover:text-white',
         className
       )}
       href={href}

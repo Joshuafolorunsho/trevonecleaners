@@ -58,7 +58,7 @@ const Index = () => {
         </div>
       </section>
       <section className="container mx-auto my-8">
-        <div className="rounded-3xl bg-white p-8 shadow-lg shadow-gray-300 sm:rounded-[40px] md:flex md:space-x-14 lg:items-center">
+        <div className="rounded-3xl bg-white px-6 py-14 shadow-lg shadow-gray-300 sml:px-8 sm:rounded-[40px] md:flex md:space-x-14 lg:items-center lg:px-14">
           <div className="flex-1">
             <h2 className="pb-1 text-2xl font-semibold text-gray-950 sml:text-4xl">
               Contact Us Today
@@ -107,7 +107,7 @@ const Index = () => {
               />
               <div className="mb-2 mt-4 flex justify-center">
                 <Button type="submit" className="w-full">
-                  Proceed to confirm booking
+                  Send
                 </Button>
               </div>
             </form>
@@ -119,115 +119,123 @@ const Index = () => {
         </div>
       </section>
       <section className="container mx-auto md:pt-8">
-        <div className="md:flex">
-          <div className="flex-1 bg-primary-500 p-4 pt-8">
-            <div className="flex items-center">
-              <span>
-                <svg
-                  width="35"
-                  height="35"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-3"
-                >
-                  <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.5" />
-                  <path
-                    d="M31.95 33C29.8 33 27.7043 32.5207 25.663 31.562C23.621 30.604 21.8127 29.3373 20.238 27.762C18.6627 26.1873 17.396 24.379 16.438 22.337C15.4793 20.2957 15 18.2 15 16.05C15 15.75 15.1 15.5 15.3 15.3C15.5 15.1 15.75 15 16.05 15H20.1C20.3333 15 20.5417 15.075 20.725 15.225C20.9083 15.375 21.0167 15.5667 21.05 15.8L21.7 19.3C21.7333 19.5333 21.7293 19.7457 21.688 19.937C21.646 20.129 21.55 20.3 21.4 20.45L19 22.9C19.7 24.1 20.575 25.225 21.625 26.275C22.675 27.325 23.8333 28.2333 25.1 29L27.45 26.65C27.6 26.5 27.796 26.3873 28.038 26.312C28.2793 26.2373 28.5167 26.2167 28.75 26.25L32.2 26.95C32.4333 27 32.625 27.1123 32.775 27.287C32.925 27.4623 33 27.6667 33 27.9V31.95C33 32.25 32.9 32.5 32.7 32.7C32.5 32.9 32.25 33 31.95 33Z"
-                    fill="white"
-                  />
-                </svg>
-              </span>
-              <p className="font-bold text-white">081 611 65 391</p>
-            </div>
-
-            <p className="pl-12 text-primary-50">Drop us a call</p>
-          </div>
-          <div className="flex-1 bg-primary-50 p-4 pt-8">
-            <div className="flex items-center">
-              <span>
-                <svg
-                  width="42"
-                  height="42"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-3 inline-block"
-                >
-                  <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.5" />
-                  <path
-                    d="M32 16H16C14.9 16 14.01 16.9 14.01 18L14 30C14 31.1 14.9 32 16 32H32C33.1 32 34 31.1 34 30V18C34 16.9 33.1 16 32 16ZM32 20L24 25L16 20V18L24 23L32 18V20Z"
-                    fill="black"
-                  />
-                </svg>
-              </span>
-              <p className="break-words font-bold text-gray-950">Consult@trevoneCS.com</p>
-            </div>
-
-            <p className="pl-14 text-gray-850">Drop us a message</p>
-          </div>
-          <div className="flex-1 bg-primary-500 p-4 pt-8">
-            <div className="flex items-center">
-              <span>
-                <svg
-                  width="35"
-                  height="35"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-3 inline-block"
-                >
-                  <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.5" />
-                  <g filter="url(#filter0_d_86_777)">
+        <div className="font-open-sans md:flex">
+          <div className="flex-1 bg-primary-500 px-5 py-4">
+            <div className="flex h-full flex-col justify-center">
+              <div className="flex items-center">
+                <span>
+                  <svg
+                    width="42"
+                    height="42"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="mr-3"
+                  >
+                    <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.5" />
                     <path
-                      d="M24 24C24.55 24 25.021 23.804 25.413 23.412C25.8043 23.0207 26 22.55 26 22C26 21.45 25.8043 20.979 25.413 20.587C25.021 20.1957 24.55 20 24 20C23.45 20 22.9793 20.1957 22.588 20.587C22.196 20.979 22 21.45 22 22C22 22.55 22.196 23.0207 22.588 23.412C22.9793 23.804 23.45 24 24 24ZM24 34C21.3167 31.7167 19.3127 29.5957 17.988 27.637C16.6627 25.679 16 23.8667 16 22.2C16 19.7 16.8043 17.7083 18.413 16.225C20.021 14.7417 21.8833 14 24 14C26.1167 14 27.979 14.7417 29.587 16.225C31.1957 17.7083 32 19.7 32 22.2C32 23.8667 31.3377 25.679 30.013 27.637C28.6877 29.5957 26.6833 31.7167 24 34Z"
+                      d="M31.95 33C29.8 33 27.7043 32.5207 25.663 31.562C23.621 30.604 21.8127 29.3373 20.238 27.762C18.6627 26.1873 17.396 24.379 16.438 22.337C15.4793 20.2957 15 18.2 15 16.05C15 15.75 15.1 15.5 15.3 15.3C15.5 15.1 15.75 15 16.05 15H20.1C20.3333 15 20.5417 15.075 20.725 15.225C20.9083 15.375 21.0167 15.5667 21.05 15.8L21.7 19.3C21.7333 19.5333 21.7293 19.7457 21.688 19.937C21.646 20.129 21.55 20.3 21.4 20.45L19 22.9C19.7 24.1 20.575 25.225 21.625 26.275C22.675 27.325 23.8333 28.2333 25.1 29L27.45 26.65C27.6 26.5 27.796 26.3873 28.038 26.312C28.2793 26.2373 28.5167 26.2167 28.75 26.25L32.2 26.95C32.4333 27 32.625 27.1123 32.775 27.287C32.925 27.4623 33 27.6667 33 27.9V31.95C33 32.25 32.9 32.5 32.7 32.7C32.5 32.9 32.25 33 31.95 33Z"
                       fill="white"
                     />
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_d_86_777"
-                      x="5"
-                      y="9"
-                      width="38"
-                      height="38"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
-                    >
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feColorMatrix
-                        in="SourceAlpha"
-                        type="matrix"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        result="hardAlpha"
-                      />
-                      <feOffset dy="4" />
-                      <feGaussianBlur stdDeviation="3.5" />
-                      <feComposite in2="hardAlpha" operator="out" />
-                      <feColorMatrix
-                        type="matrix"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"
-                      />
-                      <feBlend
-                        mode="normal"
-                        in2="BackgroundImageFix"
-                        result="effect1_dropShadow_86_777"
-                      />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="effect1_dropShadow_86_777"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
-              </span>
-              <p className="font-bold text-white">
-                12,Nana Okuribido street, Ismail Estate, Maryland, Lagos State.
-              </p>
+                  </svg>
+                </span>
+                <p className="text-lg font-bold text-white">081 611 65 391</p>
+              </div>
+
+              <p className="pl-14 text-primary-50">Drop us a call</p>
             </div>
-            <p className="pl-12 pt-3 text-primary-50">Pay us a visit</p>
+          </div>
+          <div className="flex-1 bg-primary-50 px-4 py-5">
+            <div className="flex h-full flex-col justify-center">
+              <div className="flex items-center">
+                <span>
+                  <svg
+                    width="43"
+                    height="43"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="mr-3 inline-block"
+                  >
+                    <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.5" />
+                    <path
+                      d="M32 16H16C14.9 16 14.01 16.9 14.01 18L14 30C14 31.1 14.9 32 16 32H32C33.1 32 34 31.1 34 30V18C34 16.9 33.1 16 32 16ZM32 20L24 25L16 20V18L24 23L32 18V20Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+                <p className="min-w-0 break-words text-xl font-bold text-gray-950 ">
+                  Consult@trevoneCS.com
+                </p>
+              </div>
+
+              <p className="pl-14 text-gray-850">Drop us a message</p>
+            </div>
+          </div>
+          <div className="flex-1 bg-primary-500 px-4 py-5">
+            <div className="flex h-full flex-col justify-center">
+              <div className="flex items-center">
+                <span>
+                  <svg
+                    width="41"
+                    height="41"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="mr-3 inline-block"
+                  >
+                    <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.5" />
+                    <g filter="url(#filter0_d_86_777)">
+                      <path
+                        d="M24 24C24.55 24 25.021 23.804 25.413 23.412C25.8043 23.0207 26 22.55 26 22C26 21.45 25.8043 20.979 25.413 20.587C25.021 20.1957 24.55 20 24 20C23.45 20 22.9793 20.1957 22.588 20.587C22.196 20.979 22 21.45 22 22C22 22.55 22.196 23.0207 22.588 23.412C22.9793 23.804 23.45 24 24 24ZM24 34C21.3167 31.7167 19.3127 29.5957 17.988 27.637C16.6627 25.679 16 23.8667 16 22.2C16 19.7 16.8043 17.7083 18.413 16.225C20.021 14.7417 21.8833 14 24 14C26.1167 14 27.979 14.7417 29.587 16.225C31.1957 17.7083 32 19.7 32 22.2C32 23.8667 31.3377 25.679 30.013 27.637C28.6877 29.5957 26.6833 31.7167 24 34Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_d_86_777"
+                        x="5"
+                        y="9"
+                        width="38"
+                        height="38"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB"
+                      >
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix
+                          in="SourceAlpha"
+                          type="matrix"
+                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha"
+                        />
+                        <feOffset dy="4" />
+                        <feGaussianBlur stdDeviation="3.5" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix
+                          type="matrix"
+                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"
+                        />
+                        <feBlend
+                          mode="normal"
+                          in2="BackgroundImageFix"
+                          result="effect1_dropShadow_86_777"
+                        />
+                        <feBlend
+                          mode="normal"
+                          in="SourceGraphic"
+                          in2="effect1_dropShadow_86_777"
+                          result="shape"
+                        />
+                      </filter>
+                    </defs>
+                  </svg>
+                </span>
+                <p className="text-lg font-bold text-white">
+                  12, Nana Okuribido street, Ismail Estate, Maryland, Lagos State.
+                </p>
+              </div>
+              <p className="pl-14 pt-3 text-primary-50">Pay us a visit</p>
+            </div>
           </div>
         </div>
       </section>

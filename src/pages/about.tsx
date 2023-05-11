@@ -31,7 +31,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className=" md:flex md:space-x-20">
             <div className="mb-5 flex-1 md:mb-0">
-              <h2 className="text-center font-lato text-3xl font-bold text-primary-300 sml:text-5xl sml:leading-[60px] md:text-left">
+              <h2 className="text-center font-lato text-3xl font-semibold text-gray-950 sml:text-5xl sml:leading-[60px] md:text-left">
                 Our achievements over the years as a cleaning{' '}
                 <span className="bg-primary-100 text-white">service</span>
               </h2>
