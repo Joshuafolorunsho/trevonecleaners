@@ -22,7 +22,7 @@ const Home: NextPage = () => {
               Making Your <span className="text-primary-100">Space</span> Spotless with Expert
               Cleaning Solutions.
             </h1>
-            <p className="my-5 font-open-sans">
+            <p className="my-5 font-open-sans font-light">
               At Trevone, we believe that a clean space is a happy space. That's why we offer a wide
               range of cleaning services to help keep your home or office looking its best.
             </p>

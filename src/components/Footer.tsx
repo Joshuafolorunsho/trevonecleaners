@@ -78,7 +78,7 @@ export const Footer = () => {
               <h3 className="text-xl font-bold">About</h3>
               <ul className="mt-4 space-y-3">
                 {aboutLinks.map(({ href, title }, index) => (
-                  <li className="py-2 text-lg" key={index}>
+                  <li className="py-1 text-lg" key={index}>
                     <Link href={href} className="text-gray-850 hover:text-gray-900">
                       {title}
                     </Link>
@@ -90,7 +90,7 @@ export const Footer = () => {
               <h3 className="text-xl font-bold">Services</h3>
               <ul className="mt-4 space-y-3">
                 {servicesLinks.map(({ href, title }, index) => (
-                  <li className="py-2 text-lg" key={index}>
+                  <li className="py-1 text-lg" key={index}>
                     <Link href={href} className="text-gray-850 hover:text-gray-900">
                       {title}
                     </Link>
@@ -98,30 +98,32 @@ export const Footer = () => {
                 ))}
               </ul>
             </div>
-            <div className="order-4 sm:order-3">
+            <div className="order-4 sm:order-3 lg:ml-2">
               <h3 className="text-xl font-bold">Help</h3>
               <ul className="mt-4 space-y-3">
-                <li className="py-2 text-lg">
+                <li className="py-1 text-lg">
                   <Link href="#" className="text-gray-850 hover:text-gray-900">
                     FAQ
                   </Link>
                 </li>
-                <li className="py-2 text-lg">
+                <li className="py-1 text-lg">
                   <Link href="#" className="text-gray-850 hover:text-gray-900">
                     Get in Touch
                   </Link>
                 </li>
-                <li className="py-2 text-lg text-gray-850 hover:text-gray-900">@trevonenigeria</li>
               </ul>
               <ul className="mt-3 flex items-center justify-center space-x-3 sm:justify-start">
                 {socialLinks.map(({ href, title, icon }, index) => (
-                  <li className="py-2 text-lg" key={index}>
+                  <li className="py-1 text-lg" key={index}>
                     <Link href={href} title={title}>
                       <Image src={icon} width={28} height={28} alt={title} />
                     </Link>
                   </li>
                 ))}
               </ul>
+              <p className="pb-1 pt-2 font-open-sans font-semibold text-gray-850 hover:text-gray-900">
+                @trevonenigeria
+              </p>
             </div>
             <div className="order-1 sm:order-4 lg:col-span-2 lg:pl-8">
               <h3 className="text-xl font-bold">Make your booking</h3>
@@ -130,11 +132,11 @@ export const Footer = () => {
               </p>
               <LinkButton
                 href="/book"
-                className="mt-4 w-full max-w-md px-6 text-center text-lg hover:bg-primary-300"
+                className="mt-6 w-full max-w-md px-6 text-center text-lg hover:bg-primary-300"
               >
                 Book Cleaning
               </LinkButton>
-              <p className="mt-14 flex items-center justify-center space-x-2 text-lg sm:justify-start">
+              <p className="mt-5 flex items-center justify-center space-x-2 font-open-sans text-lg sm:justify-start lg:mt-12">
                 <span>Call Us:</span>
                 <Image src="/assets/icons/phone.svg" width={24} height={24} alt="phone" />
                 <a
@@ -148,8 +150,8 @@ export const Footer = () => {
           </div>
         </div>
         <hr className="my-6 lg:my-8" />
-        <p className="text-center text-gray-850">
-          <span className="w- mr-1 inline-block h-10 w-10 rounded-full border border-gray-850 p-2 text-base">
+        <p className="flex items-center justify-center text-center font-open-sans text-lg text-gray-850">
+          <span className="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-gray-850 p-2 ">
             c
           </span>{' '}
           2023 Trevone Nigeria. All rights reserved
