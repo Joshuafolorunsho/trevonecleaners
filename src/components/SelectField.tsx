@@ -9,6 +9,7 @@ import { Listbox, Transition } from '@headlessui/react';
 import React from 'react';
 import clsx from 'clsx';
 import { Option } from '~/types';
+import { ErrorMessage } from './ErrorMessage';
 
 type HasErrorType = Merge<
   FieldError,
@@ -31,6 +32,7 @@ type SelectFieldProps = {
   isMultiple?: boolean;
   placeholder?: string;
   isOptionClass?: string;
+  errorMessage?: string;
   hasError: HasErrorType | undefined;
   hasBorder?: boolean;
   openModal?: () => void;
@@ -48,7 +50,8 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
     placeholder = 'Select option',
     isMultiple = false,
     isDisabled = false,
-    isOptionClass = 'pl-10 pr-4'
+    isOptionClass = 'pl-10 pr-4',
+    errorMessage
   } = props;
 
   const hasMultipleOption = isMultiple && value && value.length > 0;
@@ -59,7 +62,7 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
         <div className="relative ">
           <Listbox.Button
             className={clsx(
-              'block h-12 w-full rounded-2xl border border-gray-250 px-4 text-left text-sm text-gray-950 ',
+              'block h-14 w-full rounded-2xl border border-gray-250 px-4 text-left text-sm text-gray-950 ',
               hasError && 'border-red-500',
               !hasBorder && 'border-transparent px-0',
               isDisabled ? 'pointer-events-none cursor-not-allowed bg-gray-100' : ' bg-gray-150',
@@ -195,6 +198,7 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
           </Transition>
         </div>
       </Listbox>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };

@@ -15,14 +15,14 @@ const Home: NextPage = () => {
       <>
         <section
           style={{ backgroundImage: "url('/assets/home-hero.png')" }}
-          className="h-[calc(100vh-96px)] bg-cover bg-no-repeat text-white"
+          className="h-[calc(100vh-180px)] bg-cover bg-no-repeat text-white"
         >
           <div className="container mx-auto flex h-full flex-col items-center justify-center p-16 px-5 text-center sm:max-w-3xl sm:px-10 md:px-0">
-            <h1 className="font-lato text-2xl sml:text-4xl sm:font-black md:text-5xl">
+            <h1 className="font-lato text-2xl leading-[4rem] sml:text-4xl sm:font-black md:text-5xl md:leading-[4rem]">
               Making Your <span className="text-primary-100">Space</span> Spotless with Expert
               Cleaning Solutions.
             </h1>
-            <p className="my-6 text-lg">
+            <p className="my-5 font-open-sans font-light">
               At Trevone, we believe that a clean space is a happy space. That's why we offer a wide
               range of cleaning services to help keep your home or office looking its best.
             </p>
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         </section>
 
         <section className="bg-gray-50 py-10 sm:py-16">
-          <div className="container mx-auto">
+          <div className="container mx-auto pt-5">
             <Title subTitle="Benefit from our top-notch cleaning services that leave you satisfied.">
               Experience complete satisfaction with our exceptional cleaning services.
             </Title>

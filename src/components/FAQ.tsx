@@ -113,10 +113,10 @@ export const FAQ: React.FC<FAQProps> = ({ bgColor = '' }) => {
           ))}
         </div>
       </div>
-      <div className="mt-8 flex items-center justify-center space-x-3 text-xl">
-        <span>Have a question?</span>
-        <Link className="text-blue-400" href="/">
-          Reach out to us
+      <div className="mt-8 flex items-center justify-center space-x-3 text-2xl">
+        <span className="text-gray-950">Have a question?</span>
+        <Link className="pl-3 text-blue-750 underline" href="/contact">
+          Reach out to us &nbsp; {'>'}
         </Link>
       </div>
     </section>

@@ -5,7 +5,7 @@ import React from 'react';
 import dayjs from 'dayjs';
 import clsx from 'clsx';
 
-import { Label } from '.';
+import { ErrorMessage, Label } from '.';
 
 type ReactDatePickPropsWithoutOnChange = Omit<ReactDatePickerProps, 'onChange'>;
 
@@ -14,6 +14,7 @@ type InputDateFieldProps = {
   label?: string;
   className?: string;
   placeholder?: string;
+  errorMessage?: string;
   hasError: FieldError | undefined;
   value?: string;
   isRequired?: boolean;
@@ -29,6 +30,7 @@ export const InputDateField: React.FC<InputDateFieldProps> = ({
   dateFormat = 'MMMM d, yyyy',
   isRequired,
   control,
+  errorMessage,
   ...props
 }) => {
   return (
@@ -44,7 +46,7 @@ export const InputDateField: React.FC<InputDateFieldProps> = ({
         render={({ field }) => (
           <DatePicker
             className={clsx(
-              'font-WorkSans focus-within:border-secondary h-12 w-full rounded-2xl border border-gray-150 bg-gray-150 px-4 text-gray-950 placeholder-gray-950 outline-none placeholder:text-sm placeholder:text-gray-950 disabled:bg-gray-100',
+              'font-WorkSans focus-within:border-secondary h-14 w-full rounded-2xl border border-gray-150 bg-gray-150 px-4 text-gray-950 placeholder-gray-950 outline-none placeholder:text-sm placeholder:text-gray-950 disabled:bg-gray-100',
               hasError && 'border-red-500',
               className
             )}
@@ -66,6 +68,7 @@ export const InputDateField: React.FC<InputDateFieldProps> = ({
           />
         )}
       />
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </>
   );
 };

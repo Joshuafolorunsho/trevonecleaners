@@ -61,7 +61,7 @@ export const InputField: React.FC<InputFieldProps> = ({
       <div className="relative">
         <input
           className={clsx(
-            'font-WorkSans focus-within:border-secondary h-12 w-full rounded-2xl border bg-gray-150 px-4 text-gray-950 placeholder-gray-950 outline-none placeholder:text-sm disabled:bg-gray-100',
+            'font-WorkSans focus-within:border-secondary h-14 w-full rounded-2xl border bg-gray-150 px-4 text-gray-950 placeholder-gray-950 outline-none placeholder:text-sm disabled:bg-gray-100',
             hasError && 'border-red-500',
             className
           )}

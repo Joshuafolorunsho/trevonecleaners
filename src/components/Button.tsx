@@ -19,11 +19,9 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={clsx(
-        'rounded-full border border-primary-100 px-6 py-3 font-open-sans font-semibold',
+        'rounded-full border border-primary-100 px-6 py-3 font-open-sans font-semibold hover:bg-white hover:text-gray-900',
         variant === 'primary' && 'bg-primary-100 text-white',
-        variant === 'primary' && 'hover:bg-primary-300',
         variant === 'outline' && 'text-gray-950',
-        variant === 'outline' && ' hover:bg-primary-300 hover:text-white',
         className
       )}
       onClick={onClick}
