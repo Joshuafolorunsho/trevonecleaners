@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           className="h-[calc(100vh-180px)] bg-cover bg-no-repeat text-white"
         >
           <div className="container mx-auto flex h-full flex-col items-center justify-center p-16 px-5 text-center sm:max-w-3xl sm:px-10 md:px-0">
-            <h1 className="font-lato text-2xl leading-[4rem] sml:text-4xl sm:font-black md:text-5xl md:leading-[4rem]">
+            <h1 className="font-lato text-2xl sml:text-4xl sml:leading-[3rem] sm:font-black md:text-5xl md:leading-[4rem]">
               Making Your <span className="text-primary-100">Space</span> Spotless with Expert
               Cleaning Solutions.
             </h1>
