@@ -42,7 +42,7 @@ export const Services = () => {
                 {service.text}
               </p>
               <LinkButton
-                href=""
+                href="/services"
                 variant="outline"
                 className="mb-4 mt-5 hidden w-fit text-white group-hover:block"
               >

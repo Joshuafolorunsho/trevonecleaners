@@ -64,7 +64,7 @@ const Index = () => {
               Contact Us Today
             </h2>
             <p className="mt-1 text-base text-gray-850 sml:text-2xl">
-              We will give you call to follow up.
+              We will give you a call to follow up.
             </p>
             <form onSubmit={handleSubmit(onSubmit)} className="mt-2 w-full">
               <div className="flex-1">
