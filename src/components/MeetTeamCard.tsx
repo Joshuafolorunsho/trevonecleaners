@@ -10,7 +10,7 @@ export const MeetTeamCard = () => {
           <h3 className="mx-auto max-w-[920px] p-3 font-lato text-3xl font-medium leading-[3rem] md:text-[40px]">
             Discover the Talented Individuals Bringing Excellence to Trevone Nigeria.
           </h3>
-          <LinkButton className="mt-4 inline-block" href="/">
+          <LinkButton className="mt-4 inline-block" href="/about/#team">
             Our Team
           </LinkButton>
         </div>

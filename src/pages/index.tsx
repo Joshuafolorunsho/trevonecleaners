@@ -27,8 +27,10 @@ const Home: NextPage = () => {
               range of cleaning services to help keep your home or office looking its best.
             </p>
             <div className="sml:flex sml:space-x-5">
-              <Button className="mb-4 xm:w-full sml:mb-0">Book us online now</Button>
-              <LinkButton href="/" className="text-white xm:w-full sm:w-max" variant="outline">
+              <LinkButton href="/book" className="mb-4 xm:w-full sml:mb-0">
+                Book us online now
+              </LinkButton>
+              <LinkButton href="/about" className="text-white xm:w-full sm:w-max" variant="outline">
                 Learn more about us
               </LinkButton>
             </div>
