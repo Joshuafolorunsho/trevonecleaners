@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Button, CheckMark, Team, Testimonials, Title } from '~/components';
+import { LinkButton, CheckMark, Team, Testimonials, Title } from '~/components';
 
 const Index = () => {
   const coreValues = [
@@ -62,7 +62,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <Button>Book us online now</Button>
+              <LinkButton href="/book">Book us online now</LinkButton>
             </div>
             <div className="flex-1">
               <Image
@@ -126,7 +126,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-10 sm:py-16">
+      <section className="py-10 sm:py-16" id="team">
         <div className="container mx-auto">
           <Title subTitle="Get to Know the Remarkable People Behind the Scenes at Trevone Nigeria">
             Our fast, friendly, professional, house-cleaning team is up for every job.{' '}

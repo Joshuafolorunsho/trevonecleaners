@@ -34,20 +34,23 @@ export const Services = () => {
           style={{ backgroundImage: `url(${service.imgUrl})` }}
           className="relative h-[448px] flex-1 rounded-3xl bg-cover text-white"
         >
-          <div className="group absolute inset-0 rounded-3xl bg-[#544b4b] bg-opacity-40 hover:backdrop-blur-sm">
-            <div className="relative z-10 flex h-full flex-col justify-end rounded-full px-6 pb-7 ">
+          <div className="group absolute inset-0 rounded-3xl bg-[#544b4b] bg-opacity-40 transition duration-1000 ease-in-out hover:backdrop-blur-sm">
+            <div className="relative z-10 flex h-full flex-col justify-end rounded-full px-6 pb-7 font-open-sans">
               <p className="text-base font-light group-hover:hidden">Cleaning | On Demand</p>
-              <h2 className="text-2xl font-bold group-hover:text-lg">{service.title}</h2>
-              <p className="hidden font-light leading-7 tracking-wide group-hover:block">
-                {service.text}
-              </p>
-              <LinkButton
-                href=""
-                variant="outline"
-                className="mb-4 mt-5 hidden w-fit text-white group-hover:block"
-              >
-                Read more
-              </LinkButton>
+              <h2 className="text-2xl font-bold group-hover:hidden">{service.title}</h2>
+              <div className="max-h-0 opacity-0 transition duration-1000 ease-in group-hover:max-h-full group-hover:opacity-100">
+                <h2 className="hidden pb-2 font-bold group-hover:block group-hover:text-lg">
+                  {service.title}
+                </h2>
+                <p className="hidden font-light tracking-wide group-hover:block">{service.text}</p>
+                <LinkButton
+                  href=""
+                  variant="outline"
+                  className="mb-3 mt-4 hidden w-fit text-white group-hover:block"
+                >
+                  Read more
+                </LinkButton>
+              </div>
             </div>
           </div>
         </div>
