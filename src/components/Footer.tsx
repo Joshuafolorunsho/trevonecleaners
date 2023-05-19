@@ -7,45 +7,45 @@ export const Footer = () => {
   const aboutLinks = [
     {
       title: 'About Us',
-      href: '#'
+      href: '/about'
     },
     {
       title: 'Our Team',
-      href: '#'
+      href: '/about/#team'
     },
     {
       title: 'Our Services',
-      href: '#'
+      href: '/services'
     },
     {
       title: 'Testimonials',
-      href: '#'
+      href: '/#testimonials'
     },
     {
       title: 'Contact Us',
-      href: '#'
+      href: '/contact'
     }
   ];
   const servicesLinks = [
     {
       title: 'Janitorial / General Cleaning',
-      href: '#'
+      href: '/services/#janitorial'
     },
     {
       title: 'Carpet & Upholstery Cleaning',
-      href: '#'
+      href: '/services/#carpet'
     },
     {
       title: 'Industrial Cleaning',
-      href: '#'
+      href: '/services/#industrial'
     },
     {
       title: 'Floor Restoration & Cleaning',
-      href: '#'
+      href: '/services/#floor'
     },
     {
       title: 'Fumigation & Pest Control',
-      href: '#'
+      href: '/services/#fumigation'
     }
   ];
 
@@ -102,12 +102,12 @@ export const Footer = () => {
               <h3 className="text-xl font-bold">Help</h3>
               <ul className="mt-4 space-y-3">
                 <li className="py-1 text-lg">
-                  <Link href="#" className="text-gray-850 hover:text-gray-900">
+                  <Link href="/#faq" className="text-gray-850 hover:text-gray-900">
                     FAQ
                   </Link>
                 </li>
                 <li className="py-1 text-lg">
-                  <Link href="#" className="text-gray-850 hover:text-gray-900">
+                  <Link href="/contact" className="text-gray-850 hover:text-gray-900">
                     Get in Touch
                   </Link>
                 </li>
@@ -143,7 +143,7 @@ export const Footer = () => {
                   href="tel:+2349030179104"
                   className="font-bold text-gray-850 hover:text-gray-900"
                 >
-                  +234 90 3017 9104
+                  +234 80 6116 5391
                 </a>
               </p>
             </div>

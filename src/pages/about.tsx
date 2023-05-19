@@ -37,8 +37,8 @@ const Index = () => {
               </h2>
               <div className="my-4 space-y-4 text-gray-850">
                 <p>
-                  Welcome to <span className="font-bold">Trevone Nigeria</span> , where we believe
-                  in delivering exceptional cleaning services that meet the needs of our clients. We
+                  Welcome to <span className="font-bold">Trevone Nigeria</span>, where we believe in
+                  delivering exceptional cleaning services that meet the needs of our clients. We
                   are a team of experienced and dedicated cleaning professionals who take pride in
                   providing top-quality services to commercial and industrial clients across Lagos
                   and all over Nigeria.
@@ -95,11 +95,11 @@ const Index = () => {
             </div>
             <div className="flex-1 text-gray-850">
               <p>
-                At Trevone Nigeria, <span>our mission</span> is to provide top-quality cleaning
-                services that meet the needs of our clients. We aim to make the lives of our clients
-                easier by taking care of their cleaning needs, so they can focus on their core
-                business. Our goal is to deliver exceptional cleaning services that are customized
-                to meet the unique needs of each client.
+                At Trevone Nigeria, <span className="font-bold">our mission</span> is to provide
+                top-quality cleaning services that meet the needs of our clients. We aim to make the
+                lives of our clients easier by taking care of their cleaning needs, so they can
+                focus on their core business. Our goal is to deliver exceptional cleaning services
+                that are customized to meet the unique needs of each client.
               </p>
               <p className="mt-6">
                 At Trevone Nigeria, we believe in providing honest, transparent, and professional

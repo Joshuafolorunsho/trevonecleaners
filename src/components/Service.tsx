@@ -9,6 +9,7 @@ interface ServiceProps {
   description: React.ReactNode;
   image: string;
   isTextRight?: boolean;
+  id: string;
 }
 
 export const Service: React.FC<ServiceProps> = ({
@@ -16,10 +17,11 @@ export const Service: React.FC<ServiceProps> = ({
   title,
   description,
   image,
-  isTextRight
+  isTextRight,
+  id
 }) => {
   return (
-    <section className="flex flex-col gap-8 md:flex-row md:gap-12 md:pb-12 xl:items-center">
+    <section className="flex flex-col gap-8 md:flex-row md:gap-12 md:pb-12 xl:items-center" id={id}>
       <div className={clsx('order-1 flex-1', !isTextRight ? 'md:order-2' : 'md:order-none')}>
         <h2 className="font-outline-2 font-lato text-[80px] font-bold text-white">{number}</h2>
         <h3 className="font-lato text-4xl font-bold text-gray-950">{title}</h3>

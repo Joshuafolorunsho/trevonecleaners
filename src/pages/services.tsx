@@ -22,7 +22,8 @@ const SERVICES = [
           here to help you maintain a spotless and well-maintained facility.
         </p>
       </>
-    )
+    ),
+    id: 'janitorial'
   },
   {
     imgUrl: '/assets/services/carpet-cleaning.png',
@@ -36,7 +37,8 @@ const SERVICES = [
         room or your entire facility, we are here to help you keep your carpets and upholstery
         looking their best.
       </>
-    )
+    ),
+    id: 'carpet'
   },
   {
     imgUrl: '/assets/services/industrial-cleaning.png',
@@ -50,7 +52,8 @@ const SERVICES = [
         the highest standards of safety and quality. From warehouse floors to heavy machinery, we
         are here to help you maintain a clean, organized, and safe industrial environment.
       </>
-    )
+    ),
+    id: 'industrial'
   },
   {
     imgUrl: '/assets/services/floor-cleaning.png',
@@ -62,7 +65,8 @@ const SERVICES = [
         clean. Our team uses the latest equipment and techniques to ensure your floors are
         well-maintained and protected. Contact us today to learn more about our floor services.
       </>
-    )
+    ),
+    id: 'floor'
   },
   {
     imgUrl: '/assets/services/pest-control.png',
@@ -75,7 +79,8 @@ const SERVICES = [
         space is free of pests. Contact us today to learn more about our fumigation and pest control
         services.
       </>
-    )
+    ),
+    id: 'fumigation'
   }
 ];
 
@@ -104,6 +109,7 @@ const Index = () => {
               description={service.description}
               image={service.imgUrl}
               isTextRight={index % 2 === 0}
+              id={service.id}
             />
           ))}
         </div>

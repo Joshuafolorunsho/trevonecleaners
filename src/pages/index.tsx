@@ -39,14 +39,14 @@ const Home: NextPage = () => {
 
         <section className="bg-gray-50 py-10 sm:py-16">
           <div className="container mx-auto pt-5">
-            <Title subTitle="Benefit from our top-notch cleaning services that leave you satisfied.">
+            <Title subTitle="Benefit from our top-notch cleaning services that leaves you satisfied.">
               Experience complete satisfaction with our exceptional cleaning services.
             </Title>
             <Services />
           </div>
         </section>
 
-        <section className="bg-primary-200 py-10 sm:py-16">
+        <section className="bg-primary-200 py-10 sm:py-16" id="testimonials">
           <div className="container mx-auto">
             <Title subTitle="Testimonials">
               Endorsed by <span className="text-primary-300">clients</span> who are proud of the{' '}
