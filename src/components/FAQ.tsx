@@ -39,7 +39,11 @@ interface FAQProps {
 
 export const FAQ: React.FC<FAQProps> = ({ bgColor = '' }) => {
   return (
-    <section style={{ backgroundColor: bgColor }} className="sm:pb-15 bg-gray-50 pb-10 pt-16">
+    <section
+      style={{ backgroundColor: bgColor }}
+      className="sm:pb-15 bg-gray-50 pb-10 pt-16"
+      id="faq"
+    >
       <div className="container mx-auto">
         <Title subTitle="we believe in providing top-quality cleaning services that meet the needs of our clients.">
           Our goal is to assist you in finding a trustworthy cleaner. Check out these frequently
