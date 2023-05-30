@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Button, CheckMark, Team, Testimonials, Title } from '~/components';
+import { LinkButton, CheckMark, Team, Testimonials, Title } from '~/components';
 
 const Index = () => {
   const coreValues = [
@@ -37,8 +37,8 @@ const Index = () => {
               </h2>
               <div className="my-4 space-y-4 text-gray-850">
                 <p>
-                  Welcome to <span className="font-bold">Trevone Nigeria</span> , where we believe
-                  in delivering exceptional cleaning services that meet the needs of our clients. We
+                  Welcome to <span className="font-bold">Trevone Nigeria</span>, where we believe in
+                  delivering exceptional cleaning services that meet the needs of our clients. We
                   are a team of experienced and dedicated cleaning professionals who take pride in
                   providing top-quality services to commercial and industrial clients across Lagos
                   and all over Nigeria.
@@ -62,7 +62,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <Button>Book us online now</Button>
+              <LinkButton href="/book">Book us online now</LinkButton>
             </div>
             <div className="flex-1">
               <Image
@@ -95,11 +95,11 @@ const Index = () => {
             </div>
             <div className="flex-1 text-gray-850">
               <p>
-                At Trevone Nigeria, <span>our mission</span> is to provide top-quality cleaning
-                services that meet the needs of our clients. We aim to make the lives of our clients
-                easier by taking care of their cleaning needs, so they can focus on their core
-                business. Our goal is to deliver exceptional cleaning services that are customized
-                to meet the unique needs of each client.
+                At Trevone Nigeria, <span className="font-bold">our mission</span> is to provide
+                top-quality cleaning services that meet the needs of our clients. We aim to make the
+                lives of our clients easier by taking care of their cleaning needs, so they can
+                focus on their core business. Our goal is to deliver exceptional cleaning services
+                that are customized to meet the unique needs of each client.
               </p>
               <p className="mt-6">
                 At Trevone Nigeria, we believe in providing honest, transparent, and professional
@@ -126,7 +126,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-10 sm:py-16">
+      <section className="py-10 sm:py-16" id="team">
         <div className="container mx-auto">
           <Title subTitle="Get to Know the Remarkable People Behind the Scenes at Trevone Nigeria">
             Our fast, friendly, professional, house-cleaning team is up for every job.{' '}
