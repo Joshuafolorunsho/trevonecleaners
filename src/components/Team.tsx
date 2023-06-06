@@ -14,15 +14,15 @@ export const Team = () => {
     {
       name: 'Samson Obadina',
       position: 'CEO',
-      image: '/assets/about/samson-obadinaa.jpg',
+      image: '/assets/about/samson-obadina.jpg',
       twitterUrl: '#',
       facebookUrl: '#',
       instagramUrl: '#'
     },
     {
-      name: 'Lady Obadina',
+      name: 'Abiola Olaoluwa',
       position: 'HSE Manager',
-      image: '/assets/about/lady.jpg',
+      image: '/assets/about/abiola-olaoluwa.jpg',
       twitterUrl: '#',
       facebookUrl: '#',
       instagramUrl: '#'
