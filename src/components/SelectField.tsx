@@ -156,7 +156,7 @@ export const SelectField: React.FC<SelectFieldProps> = (props) => {
                       clsx(
                         'group relative cursor-pointer py-2',
                         isOptionClass,
-                        active ? 'bg-secondary bg-opacity-80 text-white' : 'text-gray-900',
+                        active ? 'bg-gray-900 bg-opacity-80 text-white' : 'text-gray-900',
                         !(arr.length - 1 === index) && 'border-b'
                       )
                     }

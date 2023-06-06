@@ -43,12 +43,15 @@ const Index = () => {
   const formatDate: string[] =
     formData?.date !== undefined ? new Date(formData.date).toString().split(' ') : [];
   const {
+    watch,
     register,
     handleSubmit,
     control,
     formState: { errors, isSubmitSuccessful },
     reset
   } = useForm<FormValues>({ resolver: yupResolver(schema) });
+
+  const message = watch('message');
 
   const onSubmit = (data: FormValues) => {
     setFormData(data);
@@ -87,6 +90,10 @@ const Index = () => {
     },
     { id: 'Evening', name: 'Evening' }
   ];
+
+  const handleConfirmBooking = () => {
+
+  }
 
   return (
     <div className="bg-blue-50">
@@ -231,6 +238,7 @@ const Index = () => {
                 <TextAreaField
                   id="message"
                   placeholder="Message"
+                  value={message}
                   registration={{ ...register('message') }}
                   errorMessage={errors.message?.message}
                   hasError={errors.message}
@@ -239,7 +247,7 @@ const Index = () => {
                 />
                 <div className="mb-2 mt-4 flex justify-center">
                   <Button type="submit" className="w-full sml:w-10/12 md:w-8/12">
-                    Proceed to confirm booking
+                    Proceed to booking
                   </Button>
                 </div>
               </form>
@@ -277,7 +285,7 @@ const Index = () => {
                 <p className="text-gray-750">Service Time</p>
                 <p className="flex-1 pb-4 font-bold">{formData?.serviceTime.id}</p>
               </div>
-              <Button className="mb-5 mt-8 w-full">Proceed to confirm booking</Button>
+              <Button onClick={handleConfirmBooking} className="mb-5 mt-8 w-full">Proceed to confirm booking</Button>
             </div>
           </section>
         )}

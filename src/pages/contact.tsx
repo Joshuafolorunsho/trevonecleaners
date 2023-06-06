@@ -32,11 +32,14 @@ const schema = yup
 const Index = () => {
   const [formData, setFormData] = useState<FormValues>();
   const {
+    watch,
     register,
     handleSubmit,
     formState: { errors },
     reset
   } = useForm<FormValues>({ resolver: yupResolver(schema) });
+
+  const message = watch('message');
 
   const onSubmit = (data: FormValues) => {
     setFormData(data);
@@ -102,6 +105,7 @@ const Index = () => {
                 registration={{ ...register('message') }}
                 errorMessage={errors.message?.message}
                 hasError={errors.message}
+                value={message}
                 isRequired
                 className="mb-1 mt-2 border-gray-150 text-gray-950 placeholder-gray-150"
               />
@@ -113,9 +117,14 @@ const Index = () => {
             </form>
           </div>
 
-          <div className="mt-8 flex-1 md:mt-0">
+          <a
+            href="https://www.google.com/maps/place/12+Ismail+Est,+Maryland+101233,+Lagos/@6.5668564,3.3635836,17z/data=!3m1!4b1!4m6!3m5!1s0x103b8d89d6e6e549:0x9df814523bbcf7a0!8m2!3d6.5668511!4d3.3661585!16s%2Fg%2F11st868g7c?entry=ttu"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 flex-1 md:mt-0"
+          >
             <img src="/assets/contact/map.png" className="h-full w-full rounded-2xl object-cover" />
-          </div>
+          </a>
         </div>
       </section>
       <section className="container mx-auto md:pt-8">
@@ -165,7 +174,7 @@ const Index = () => {
                   </svg>
                 </span>
                 <p className="min-w-0 break-words text-xl font-bold text-gray-950 ">
-                  Consult@trevoneCS.com
+                  consult@trevonecleaners.com
                 </p>
               </div>
 
@@ -251,8 +260,8 @@ const Index = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M18.7698 36.67L0.883087 3.02666C0.780328 2.8334 0.716641 2.62179 0.695662 2.40392C0.674683 2.18604 0.696823 1.96617 0.760818 1.75685C0.890062 1.33411 1.18194 0.980026 1.57225 0.772494C1.96256 0.564963 2.41933 0.520981 2.84207 0.650225C3.05139 0.71422 3.24605 0.818816 3.41495 0.958043C3.58384 1.09727 3.72366 1.2684 3.82642 1.46166L21.7148 35.105L24.2514 33.755C25.0246 33.344 25.8711 33.0893 26.7427 33.0054C27.6143 32.9216 28.4938 33.0103 29.3311 33.2665C30.1684 33.5226 30.9471 33.9412 31.6226 34.4983C32.2981 35.0554 32.8572 35.7401 33.2681 36.5133L34.3481 38.545L45.7981 55.3017L31.2348 63.0433L26.1898 53.0717L23.2164 54.5767L28.2914 64.61L22.0481 67.9283L14.5564 49.065L13.4781 47.035C13.067 46.262 12.8122 45.4155 12.7283 44.544C12.6443 43.6725 12.7329 42.793 12.9889 41.9557C13.2448 41.1184 13.6632 40.3397 14.2202 39.6642C14.7771 38.9886 15.4617 38.4293 16.2348 38.0183L18.7698 36.67ZM25.8148 36.7L17.7981 40.9617C17.4115 41.1672 17.0693 41.4468 16.7908 41.7846C16.5123 42.1224 16.3031 42.5117 16.1751 42.9303C16.0471 43.349 16.0029 43.7887 16.0448 44.2245C16.0868 44.6603 16.2142 45.0835 16.4198 45.47L17.4981 47.5L31.4031 40.1067L30.3231 38.0783C30.1176 37.6918 29.838 37.3495 29.5002 37.071C29.1624 36.7926 28.7731 36.5834 28.3544 36.4554C27.9358 36.3274 27.496 36.2831 27.0603 36.3251C26.6245 36.3671 26.2013 36.4945 25.8148 36.7Z"
                   fill="white"
                 />

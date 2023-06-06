@@ -66,7 +66,7 @@ export const Header = () => {
           })}
           <LinkButton href="/book">Book Us Now</LinkButton>
           <Button variant="outline" className="block lg:inline-block">
-            <div className="flex items-center space-x-2">
+            <a href='tel:+2348161165391' className="flex items-center space-x-2">
               <svg
                 width="18"
                 height="18"
@@ -87,9 +87,9 @@ export const Header = () => {
                   fill="#4EABC2"
                 />
               </svg>
-              
+
               <span>+234 816 116 5391</span>
-            </div>
+            </a>
           </Button>
         </ul>
       </div>

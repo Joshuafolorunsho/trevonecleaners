@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkButton } from './LinkButton';
+// import { LinkButton } from './LinkButton';
 import clsx from 'clsx';
 
 const testimonials = [
@@ -18,7 +18,7 @@ const testimonials = [
     company: 'CEO Of Childcare.'
   },
   {
-    name: 'Obadina Samuel',
+    name: 'Jenny Jackson',
     imgUrl: '/assets/sarah-afolayan.png',
     message:
       "I have been using Trevone's cleaning services for several years now and I couldn't be happier. The team is always professional, friendly, and does a fantastic job. I highly recommend Trevone to anyone looking for cleaning services.",
@@ -61,11 +61,11 @@ export const Testimonials = () => {
           </div>
         ))}
       </section>
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <LinkButton href="/about" className="text-primary-300" variant="outline">
           View all Testimonials
         </LinkButton>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -12,37 +12,21 @@ export const Team = () => {
 
   const teams = [
     {
-      name: 'John Doe',
+      name: 'Samson Obadina',
       position: 'CEO',
-      image: '/assets/about/team-1.png',
+      image: '/assets/about/samson-obadinaa.jpg',
       twitterUrl: '#',
       facebookUrl: '#',
       instagramUrl: '#'
     },
     {
-      name: 'Joseph Doe',
-      position: 'CEO',
-      image: '/assets/about/team-2.png',
+      name: 'Lady Obadina',
+      position: 'HSE Manager',
+      image: '/assets/about/lady.jpg',
       twitterUrl: '#',
       facebookUrl: '#',
       instagramUrl: '#'
     },
-    {
-      name: 'Obadina Abiola',
-      position: 'CEO',
-      image: '/assets/about/team-3.png',
-      twitterUrl: '#',
-      facebookUrl: '#',
-      instagramUrl: '#'
-    },
-    {
-      name: 'Joshua Doe',
-      position: 'CEO',
-      image: '/assets/about/team-4.png',
-      twitterUrl: '#',
-      facebookUrl: '#',
-      instagramUrl: '#'
-    }
   ];
 
   return (
@@ -72,7 +56,10 @@ export const Team = () => {
       >
         {teams.map(({ name, position, image, twitterUrl, facebookUrl, instagramUrl }) => (
           <SwiperSlide key={name}>
-            <Image src={image} width={360} height={360} alt={name} className="w-full" />
+            <div className='h-[360px] w-[360px] relative'>
+            <Image  src={image} alt={name} className="object-cover" fill />
+
+            </div>
             <h3 className="mt-4 font-bold text-primary-300">{name}</h3>
             <p className="my-2 text-gray-750">{position}</p>
             <ul className="flex items-center space-x-2">
