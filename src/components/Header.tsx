@@ -139,7 +139,7 @@ export const Header = () => {
               />
             </svg>
 
-            <span>+234 816 116 5891</span>
+            <span>+234 816 116 5391</span>
           </div>
         </Button>
       </ul>

@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import { useForm, Control } from 'react-hook-form';
+import { useForm as useFormSpree } from '@formspree/react';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import React from 'react';
+
 import * as yup from 'yup';
 
 import { Button, TextAreaField } from '~/components';
 import { InputField } from '~/components/InputField';
-import Link from 'next/link';
 
 type FormValues = {
   fullName: string;
-  phoneNum: string;
+  phoneNumber: string;
   email: string;
   message: string;
 };
@@ -21,7 +23,7 @@ const schema = yup
       .string()
       .email('Please enter a valid email address')
       .required('This field is required'),
-    phoneNum: yup
+    phoneNumber: yup
       .string()
       .required('This field is required')
       .matches(/^([0]{1})[0-9]{10}$/, 'Invalid phone number.'),
@@ -30,7 +32,7 @@ const schema = yup
   .required();
 
 const Index = () => {
-  const [formData, setFormData] = useState<FormValues>();
+  const [state, handleSubmitForm] = useFormSpree('mbjenoew');
   const {
     watch,
     register,
@@ -41,9 +43,22 @@ const Index = () => {
 
   const message = watch('message');
 
+  React.useEffect(() => {
+    if (state.succeeded) {
+      toast.success('Form successfully submitted.');
+      reset();
+    }
+  }, [state.succeeded]);
+
   const onSubmit = (data: FormValues) => {
-    setFormData(data);
-    reset();
+    const { fullName, email, message, phoneNumber } = data || {};
+    const payload = {
+      'Full Name': fullName,
+      'Phone number': phoneNumber,
+      Email: email,
+      Message: message
+    };
+    handleSubmitForm(payload);
   };
 
   return (
@@ -83,9 +98,9 @@ const Index = () => {
                 <InputField
                   type={'number'}
                   placeholder="Phone Number"
-                  registration={{ ...register('phoneNum') }}
-                  hasError={errors.phoneNum}
-                  errorMessage={errors.phoneNum?.message}
+                  registration={{ ...register('phoneNumber') }}
+                  hasError={errors.phoneNumber}
+                  errorMessage={errors.phoneNumber?.message}
                   isRequired
                   className="my-3 max-w-4xl"
                 />
@@ -110,8 +125,8 @@ const Index = () => {
                 className="mb-1 mt-2 border-gray-150 text-gray-950 placeholder-gray-150"
               />
               <div className="mb-2 mt-4 flex justify-center">
-                <Button type="submit" className="w-full">
-                  Send
+                <Button disabled={state.submitting} type="submit" className="w-full">
+                  {state.submitting ? 'Sending...' : 'Send'}
                 </Button>
               </div>
             </form>
@@ -210,7 +225,7 @@ const Index = () => {
                         filterUnits="userSpaceOnUse"
                         color-interpolation-filters="sRGB"
                       >
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feFlood floodOpacity="0" result="BackgroundImageFix" />
                         <feColorMatrix
                           in="SourceAlpha"
                           type="matrix"
@@ -276,7 +291,7 @@ const Index = () => {
             forward to staying in touch with you!
           </p>
           <div className="flex justify-center space-x-8 pt-3">
-            <Link href="">
+            <a href="https://twitter.com/TrevoneN97713" target="_blank" rel="noreferrer">
               {' '}
               <svg
                 width="40"
@@ -291,8 +306,8 @@ const Index = () => {
                   fill="#1E2324"
                 />
               </svg>
-            </Link>
-            <Link href="">
+            </a>
+            <a href="https://web.facebook.com/trevone.nigeria" target="_blank" rel="noreferrer">
               <svg
                 width="40"
                 height="40"
@@ -306,8 +321,8 @@ const Index = () => {
                   fill="#1E2324"
                 />
               </svg>
-            </Link>
-            <Link href="">
+            </a>
+            <a href="https://www.instagram.com/trevone.nigeria/" target="_blank" rel="noreferrer">
               <svg
                 width="40"
                 height="40"
@@ -321,7 +336,7 @@ const Index = () => {
                   fill="#1E2324"
                 />
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

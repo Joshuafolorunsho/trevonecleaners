@@ -1,16 +1,19 @@
+import { useForm as useFormSpree } from '@formspree/react';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, Control } from 'react-hook-form';
 import React, { useState } from 'react';
-import { yupResolver } from '@hookform/resolvers/yup';
+import Link from 'next/link';
 import * as yup from 'yup';
 
 import { Button, SelectField, TextAreaField, Title } from '~/components';
 import { InputDateField } from '~/components/InputDateField';
 import { InputField } from '~/components/InputField';
-import Link from 'next/link';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 
 type FormValues = {
   fullName: string;
-  phoneNum: number;
+  phoneNumber: number;
   email: string;
   serviceType: { id: string; name: string };
   date: number;
@@ -25,7 +28,7 @@ const schema = yup
       .string()
       .email('Please enter a valid email address')
       .required('This field is required'),
-    phoneNum: yup
+    phoneNumber: yup
       .string()
       .required('This field is required')
       .matches(/^([0]{1})[0-9]{10}$/, 'Invalid phone number.'),
@@ -39,6 +42,8 @@ const schema = yup
   .required();
 
 const Index = () => {
+  const router = useRouter();
+  const [state, handleSubmitForm] = useFormSpree('xdovqgvr');
   const [formData, setFormData] = useState<FormValues>();
   const formatDate: string[] =
     formData?.date !== undefined ? new Date(formData.date).toString().split(' ') : [];
@@ -55,8 +60,6 @@ const Index = () => {
 
   const onSubmit = (data: FormValues) => {
     setFormData(data);
-
-    reset();
   };
 
   const services = [
@@ -91,9 +94,30 @@ const Index = () => {
     { id: 'Evening', name: 'Evening' }
   ];
 
-  const handleConfirmBooking = () => {
+  React.useEffect(() => {
+    if (state.succeeded) {
+      toast.success('Form successfully submitted.');
+    }
+  }, [state.succeeded]);
 
-  }
+  const handleConfirmBooking = () => {
+    const { fullName, date, email, message, phoneNumber, serviceTime, serviceType } =
+      formData || {};
+    const payload = {
+      'Full Name': fullName,
+      Date: new Date(date ? date : '').toDateString(),
+      'Phone number': phoneNumber,
+      Email: email,
+      'Service Time': serviceTime?.name,
+      'Service Type': serviceType?.name,
+      Message: message
+    };
+    handleSubmitForm(payload);
+  };
+
+  const handleReset = () => {
+    reset(formData);
+  };
 
   return (
     <div className="bg-blue-50">
@@ -188,9 +212,9 @@ const Index = () => {
                     <InputField
                       type="number"
                       placeholder="Phone Number"
-                      registration={{ ...register('phoneNum') }}
-                      hasError={errors.phoneNum}
-                      errorMessage={errors.phoneNum?.message}
+                      registration={{ ...register('phoneNumber') }}
+                      hasError={errors.phoneNumber}
+                      errorMessage={errors.phoneNumber?.message}
                       isRequired
                       className="my-3 max-w-4xl"
                     />
@@ -247,7 +271,7 @@ const Index = () => {
                 />
                 <div className="mb-2 mt-4 flex justify-center">
                   <Button type="submit" className="w-full sml:w-10/12 md:w-8/12">
-                    Proceed to booking
+                    Proceed
                   </Button>
                 </div>
               </form>
@@ -261,22 +285,28 @@ const Index = () => {
                 <p className="pt-5 text-gray-750">Name</p>
                 <div className="flex flex-wrap justify-between pb-6">
                   <p className="flex-1 font-bold ">{formData?.fullName}</p>
-                  <Link href="" className="font-semibold text-blue-750 hover:text-blue-900">
+                  <button
+                    onClick={handleReset}
+                    className="font-semibold text-blue-750 hover:text-blue-900"
+                  >
                     Edit
-                  </Link>
+                  </button>
                 </div>
                 <p className="text-gray-750">Email Address</p>
                 <p className="flex-1 break-words pb-6 font-bold">{formData?.email}</p>
                 <p className="text-gray-750">Phone Number</p>
-                <p className="flex-1 pb-4 font-bold">{formData?.phoneNum}</p>
+                <p className="flex-1 pb-4 font-bold">{formData?.phoneNumber}</p>
               </div>
               <div className="border-b border-gray-850 pt-2">
                 <p className="pt-5 text-gray-750">Service Type</p>
                 <div className="flex flex-wrap justify-between pb-6">
                   <p className="flex-1 font-bold ">{formData?.serviceType.id}</p>
-                  <Link href="" className="font-semibold text-blue-750 hover:text-blue-900">
+                  <button
+                    onClick={handleReset}
+                    className="font-semibold text-blue-750 hover:text-blue-900"
+                  >
                     Change
-                  </Link>
+                  </button>
                 </div>
                 <p className="text-gray-750">Service Date</p>
                 <p className="flex-1 pb-6 font-bold">
@@ -285,7 +315,17 @@ const Index = () => {
                 <p className="text-gray-750">Service Time</p>
                 <p className="flex-1 pb-4 font-bold">{formData?.serviceTime.id}</p>
               </div>
-              <Button onClick={handleConfirmBooking} className="mb-5 mt-8 w-full">Proceed to confirm booking</Button>
+              <Button
+                disabled={state.submitting || state.succeeded}
+                onClick={handleConfirmBooking}
+                className="mb-5 mt-8 w-full"
+              >
+                {state.submitting ? (
+                  'Confirming...'
+                ) : (
+                  <>{state.succeeded ? 'Confirmed.' : 'Proceed to confirm booking'}</>
+                )}
+              </Button>
             </div>
           </section>
         )}

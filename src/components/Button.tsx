@@ -6,11 +6,13 @@ interface ButtonProps {
   className?: string;
   children: React.ReactNode;
   type?: 'submit' | 'button' | 'reset';
+  disabled?: boolean;
   onClick?: () => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
+  disabled = false,
   className,
   children,
   onClick,
@@ -24,6 +26,7 @@ export const Button: React.FC<ButtonProps> = ({
         variant === 'outline' && 'text-gray-950',
         className
       )}
+      disabled={disabled}
       onClick={onClick}
       type={type}
     >

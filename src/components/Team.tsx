@@ -15,18 +15,19 @@ export const Team = () => {
       name: 'Samson Obadina',
       position: 'CEO',
       image: '/assets/about/samson-obadina.jpg',
-      twitterUrl: '#',
-      facebookUrl: '#',
-      instagramUrl: '#'
+      twitterUrl:
+        'https://twitter.com/Sam_Olaolu/status/1490989984362668032?t=eNlv2eqG8uUW-40X_6xZhA&s=19',
+      facebookUrl: 'https://www.facebook.com/samson.obadina?mibextid=ZbWKwL',
+      instagramUrl: 'http://Instagram.com/poetsam1'
     },
     {
       name: 'Abiola Olaoluwa',
       position: 'HSE Manager',
       image: '/assets/about/abiola-olaoluwa.jpg',
       twitterUrl: '#',
-      facebookUrl: '#',
-      instagramUrl: '#'
-    },
+      facebookUrl: 'https://www.facebook.com/joseph.abiola.7?mibextid=ZbWKwL',
+      instagramUrl: 'https://instagram.com/josephabiola2014?igshid=NTc4MTIwNjQ2YQ=='
+    }
   ];
 
   return (
@@ -56,18 +57,19 @@ export const Team = () => {
       >
         {teams.map(({ name, position, image, twitterUrl, facebookUrl, instagramUrl }) => (
           <SwiperSlide key={name}>
-            <div className='h-[360px] w-[360px] relative'>
-            <Image  src={image} alt={name} className="object-cover" fill />
-
+            <div className="relative h-[360px] w-[360px]">
+              <Image src={image} alt={name} className="object-cover" fill />
             </div>
             <h3 className="mt-4 font-bold text-primary-300">{name}</h3>
             <p className="my-2 text-gray-750">{position}</p>
             <ul className="flex items-center space-x-2">
-              <li>
-                <a href={twitterUrl}>
-                  <Image src="/assets/icons/twitter.svg" width={28} height={28} alt="twitter" />
-                </a>
-              </li>
+              {twitterUrl !== '#' && (
+                <li>
+                  <a href={twitterUrl}>
+                    <Image src="/assets/icons/twitter.svg" width={28} height={28} alt="twitter" />
+                  </a>
+                </li>
+              )}
               <li>
                 <a href={facebookUrl}>
                   <Image src="/assets/icons/facebook.svg" width={28} height={28} alt="facebook" />
